@@ -1,0 +1,67 @@
+
+.modalWrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+
+.activeModal {
+  display: flex;
+}
+
+.modal {
+  padding: 24px;
+  min-width: 500px;
+  background-color: #ffffff;
+  border-radius: 28px;
+}
+
+.modalHeader {
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.modalInput {
+  margin-bottom: 22px;
+  padding: 17px 48px;
+  width: 100%;
+  border: none;
+  background: #FAF9FB;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid #000000;
+}
+
+.modalInput::placeholder{
+  color: rgba(28, 27, 31, 0.38);
+}
+
+.btnWrapper{
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.btnWrapper button {
+  padding: 10px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+}
+.cancelBtn {
+  color: #5946D2;
+  background-color: transparent;
+}
+.addBtn {
+  background: #5946D2;
+  border-radius: 20px;
+  color: #ffffff;
+}

@@ -27,7 +27,7 @@ const selectedTodoId = useSelector(state => state.interface.todoId);
 
   return (
     <li 
-      className={`${style.todoItem} ${todoId === selectedTodoId ? 'selected' : ''}`}
+      className={`${style.todoItem} ${todoId === selectedTodoId ? style.selected : ''}`}
       onClick={editTodo}
     >
 

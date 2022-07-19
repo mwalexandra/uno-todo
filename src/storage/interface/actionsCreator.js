@@ -1,4 +1,5 @@
-import { SHOW_PANEL_TODO, SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB  } from './actions';
+import { SHOW_PANEL_TODO, SHOW_MODAL,
+        SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB  } from './actions';
 
 function showPanelTodo(show) {
   return {
@@ -7,6 +8,15 @@ function showPanelTodo(show) {
       show,
     }
   }  
+}
+
+function showModal (isModalActive) {
+  return {
+    type: SHOW_MODAL,
+    payload: {
+      isModalActive,
+    }
+  } 
 }
 
 function selectTodoId(id) {
@@ -36,4 +46,5 @@ function setActiveTab(tab) {
   }
 }
 
-export {showPanelTodo, selectTodoId, selectListId, setActiveTab}
+export {showPanelTodo, showModal, 
+        selectTodoId, selectListId, setActiveTab}

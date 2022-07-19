@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useTextInput } from '../../../../helpers'
 import {changeHeader} from '../../../../storage/content/actionsCreator'
+import {showModal} from '../../../../storage/interface/actionsCreator'
+
 
 import style from './index.module.css'
 
@@ -11,6 +13,7 @@ function TodoListHeader (){
   const dispatch = useDispatch();
   const [disabled, setDisabled] = useState(true);
 
+  const isModalActive = useSelector(state => state.interface.isModalActive)
 
   const selectedListId = useSelector(
     state => state.interface.listId
@@ -22,29 +25,26 @@ function TodoListHeader (){
         .content.find( list =>  list.id === selectedListId)?.header
   )
 
-  const [title, setTitle, bindTitle] = useTextInput(header);
+  // const [title, bindTitle] = useTextInput(header);
+
+  // useEffect(
+  //   function onFocus() {
+  //     if(!disabled) {
+  //       headerInput.current.focus();
+  //     }
+  //   }, [disabled]
+  // )
 
 
-  useEffect(
-    function onFocus() {
-      if(!disabled) {
-        headerInput.current.focus();
-      }
-    }, [disabled]
-  )
-
-
-  function changeTodoListHeader(e){
-    e.preventDefault();
-
-    dispatch(changeHeader(selectedListId, title));
-
-    setDisabled(true);
-  }
+  // function changeTodoListHeader(e){
+  //   e.preventDefault();
+  //   dispatch(changeHeader(selectedListId, title));
+  //   setDisabled(true);
+  // }
 
   return (
     <div className={style.headingWrapper}>
-      <form 
+      {/* <form 
         onSubmit={(e) => changeTodoListHeader(e)}
       >
         <input 
@@ -54,11 +54,13 @@ function TodoListHeader (){
             disabled={disabled}
             ref={headerInput}
         />
-      </form>
+      </form> */}
+      <h1 className={style.todosHeading}>{header}</h1>
       <div className={style.headingBtnWrapper}>
-      <button
+        <button
           className={`${style.headingBtn} ${style.headingEdit}`}
-          onClick={() => setDisabled(false)}
+          onClick={() => dispatch(showModal(true))
+          }
         ></button>
         <button
           className={`${style.headingBtn} ${style.headingDelete}`}

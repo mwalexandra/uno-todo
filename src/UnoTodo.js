@@ -1,10 +1,8 @@
-import {useEffect, useState,useMemo } from 'react';
+import { useState } from 'react';
 import SideBar from './components/SideBar';
 import Todos from './components/Todos';
+import Modal from './ui/modal';
 import './common-styles/reset.css';
-import { useDate, useLists, CreateDate } from './helpers';
-
-import { useSelector } from 'react-redux';
 
 function UnoTodo() {
 
@@ -19,6 +17,7 @@ function UnoTodo() {
         setSelectedList={setSelectedList}
       />
       <Todos />
+      <Modal />
     </>
   )
 }
