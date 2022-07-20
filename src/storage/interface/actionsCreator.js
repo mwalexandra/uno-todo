@@ -10,11 +10,15 @@ function showPanelTodo(show) {
   }  
 }
 
-function showModal (isModalActive) {
+function showModal (name, isActive, action, btnText, inputValue) {
   return {
     type: SHOW_MODAL,
     payload: {
-      isModalActive,
+      name,
+      isActive,
+      action,
+      btnText,
+      inputValue,
     }
   } 
 }

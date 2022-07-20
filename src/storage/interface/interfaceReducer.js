@@ -3,10 +3,16 @@ import { SHOW_PANEL_TODO, SHOW_MODAL,
 
 const initialState = {
   show: false,
-  isModalActive: false,
   todoId: 0,
   listId: 44444,
   tab: 'Todo',
+  modal: {
+    name: '', // 'New list', 'Add a task', 'Rename list'
+    isActive: false,
+    action: '', // addList, addTask, changeHeader
+    btnText: '', // '+ Create', '+ Add', 'Rename'
+    inputValue: '',
+  }  
 };
 
 function iterfaceReducer(state = initialState, {type, payload}) {
@@ -22,7 +28,13 @@ function iterfaceReducer(state = initialState, {type, payload}) {
     case SHOW_MODAL: 
       return {
         ...state,
-        isModalActive: payload.isModalActive,
+        modal: {
+          name: payload.name,
+          isActive: payload.isActive,
+          action: payload.action,
+          btnText: payload.btnText,
+          inputValue: payload.inputValue,
+        }
       }
 
     case SELECT_TODO_ID:

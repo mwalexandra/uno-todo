@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useTextInput } from '../../../../helpers'
 import {changeHeader} from '../../../../storage/content/actionsCreator'
-import {showModal} from '../../../../storage/interface/actionsCreator'
+import { showModal } from '../../../../storage/interface/actionsCreator'
 
 
 import style from './index.module.css'
@@ -12,8 +12,6 @@ function TodoListHeader (){
   const headerInput = useRef(null);
   const dispatch = useDispatch();
   const [disabled, setDisabled] = useState(true);
-
-  const isModalActive = useSelector(state => state.interface.isModalActive)
 
   const selectedListId = useSelector(
     state => state.interface.listId
@@ -59,7 +57,7 @@ function TodoListHeader (){
       <div className={style.headingBtnWrapper}>
         <button
           className={`${style.headingBtn} ${style.headingEdit}`}
-          onClick={() => dispatch(showModal(true))
+          onClick={() => dispatch(showModal('Rename list', true, 'changeHeader', 'Rename', header))
           }
         ></button>
         <button

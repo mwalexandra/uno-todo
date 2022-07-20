@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SideBar from './components/SideBar';
 import Todos from './components/Todos';
-import Modal from './ui/modal';
+import Modal from './components/Modal';
 import './common-styles/reset.css';
 
 function UnoTodo() {

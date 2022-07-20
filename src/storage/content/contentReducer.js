@@ -113,7 +113,6 @@ function contentReducer(state = initialState, {type, payload}) {
           ...state,
             content: state.content.map(list => {
               if(list.id === payload.listId) {
-                
                 list.header = payload.header
               }
               return list;
