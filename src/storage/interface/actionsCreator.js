@@ -1,4 +1,4 @@
-import { SHOW_PANEL_TODO, SHOW_MODAL,
+import { SHOW_PANEL_TODO, SHOW_MODAL, MODAL_INFO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB  } from './actions';
 
 function showPanelTodo(show) {
@@ -10,14 +10,22 @@ function showPanelTodo(show) {
   }  
 }
 
-function showModal (name, isActive, action, btnText, inputValue) {
+function showModal (showModal) {
   return {
     type: SHOW_MODAL,
     payload: {
+      showModal,
+    }
+  } 
+}
+
+function showModalInfo (name, btnText, action, inputValue){
+  return {
+    type: MODAL_INFO,
+    payload: {
       name,
-      isActive,
-      action,
       btnText,
+      action,
       inputValue,
     }
   } 
@@ -50,5 +58,5 @@ function setActiveTab(tab) {
   }
 }
 
-export {showPanelTodo, showModal, 
+export {showPanelTodo, showModal, showModalInfo,
         selectTodoId, selectListId, setActiveTab}
