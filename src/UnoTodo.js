@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import SideBar from './components/SideBar';
 import Todos from './components/Todos';
-import Modal from './components/Modal';
+import ChangeModal from './components/Modals/ChangeModal';
+import ConfirmModal from './components/Modals/ConfirmModal';
 import './common-styles/reset.css';
 
 function UnoTodo() {
@@ -17,7 +18,8 @@ function UnoTodo() {
         setSelectedList={setSelectedList}
       />
       <Todos />
-      <Modal />
+      <ChangeModal />
+      <ConfirmModal />
     </>
   )
 }

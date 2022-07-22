@@ -18,8 +18,8 @@ function TodoListHeader (){
   )
 
   function changeHeader(){
-    dispatch(showModal(true));
     dispatch(showModalInfo('Rename list', 'Rename', 'changeHeader', header))
+    dispatch(showModal(true, false))
   }
 
   return (

@@ -1,15 +1,15 @@
 import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
 				CHANGE_HEADER, CHANGE_DATE, CHANGE_TITLE, CHANGE_NOTE } from './actions';
 
-// function todoAdd(listId, ) {
-//   return {
-//     type: TODO_COMPLETE, 
-//     payload: {
-//       listId,
-//       todoId,
-//     }
-//   }
-// }
+function todoAdd(listId, title) {
+  return {
+    type: TODO_ADD, 
+    payload: {
+      listId,
+			title,
+    }
+  }
+}
 
 function todoComplete(listId, todoId) {
   return {
@@ -94,5 +94,5 @@ function changeNote(listId, todoId, note) {
 	}
 }
 
-export {todoComplete, todoImportant, todoSelected, todoDelete, 
+export {todoAdd, todoComplete, todoImportant, todoSelected, todoDelete, 
 				changeHeader, changeDate, changeTitle, changeNote};

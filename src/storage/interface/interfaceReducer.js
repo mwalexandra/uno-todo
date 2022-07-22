@@ -6,7 +6,10 @@ const initialState = {
   todoId: 0,
   listId: 44444,
   tab: 'Todo',
-  showModal: false,
+  showModal: {
+    changeModal: false,
+    confirmModal: false,
+  }, 
   modal: {
     name: '', // 'New list', 'Add a task', 'Rename list'
     action: '', // addList, addTask, changeHeader
@@ -28,7 +31,8 @@ function iterfaceReducer(state = initialState, {type, payload}) {
     case SHOW_MODAL: 
       return {
         ...state,
-        showModal: payload.showModal,
+        changeModal: payload.changeModal,
+        confirmModal: payload.confirmModal,
       }
 
     case MODAL_INFO:

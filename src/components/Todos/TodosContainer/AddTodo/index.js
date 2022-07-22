@@ -1,18 +1,22 @@
 import style from './index.module.css'
 import { useDispatch } from 'react-redux';
-import {showModal} from '../../../../storage/interface/actionsCreator.js'
+import {showModal, showModalInfo} from '../../../../storage/interface/actionsCreator.js'
 
 
 function AddTodo(){
 
   const dispatch = useDispatch();
 
+  function showAddModal(){
+    dispatch(showModalInfo ('Add Todo', '+ Add', 'todoAdd', ''))
+    dispatch(showModal(true))
+  }
 
   return (  
       <button 
         type='submit'
         className={style.addButton}
-        onClick={() => dispatch(showModal('Add a task', true, 'addTask', '+ Add'))}
+        onClick={() => showAddModal()}
       >Add a task</button>
     )
 }

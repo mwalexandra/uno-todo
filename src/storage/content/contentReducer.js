@@ -1,4 +1,4 @@
-import { TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
+import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
         CHANGE_HEADER, CHANGE_DATE, CHANGE_NOTE, CHANGE_TITLE } from './actions';
 import { CreateDate } from '../../helpers';
 
@@ -47,6 +47,23 @@ const initialState = {
 
 function contentReducer(state = initialState, {type, payload}) {
   switch(type){
+
+    case TODO_ADD:
+      return {
+        ...state,
+          content: state.content.map(list => {
+            if(list.id === payload.listId) {
+              list.todos.push({
+                id: Date.now(),
+                title: payload.title,
+                note: 'no notes',
+                date: Date.now(),
+                createDate: Date.now(),
+              })
+            }
+            return list;
+          })
+        }
 
     case TODO_COMPLETE:
       return {

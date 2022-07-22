@@ -10,11 +10,12 @@ function showPanelTodo(show) {
   }  
 }
 
-function showModal (showModal) {
+function showModal (changeModal, confirmModal) {
   return {
     type: SHOW_MODAL,
     payload: {
-      showModal,
+      changeModal,
+      confirmModal,
     }
   } 
 }
