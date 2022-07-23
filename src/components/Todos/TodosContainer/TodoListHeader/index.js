@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { showModal, showModalInfo } from '../../../../storage/interface/actionsCreator'
-
+import { showChangeModal, showConfirmModal, showModalInfo } from '../../../../storage/interface/actionsCreator'
 
 import style from './index.module.css'
 
@@ -19,7 +18,12 @@ function TodoListHeader (){
 
   function changeHeader(){
     dispatch(showModalInfo('Rename list', 'Rename', 'changeHeader', header))
-    dispatch(showModal(true, false))
+    dispatch(showChangeModal(true))
+  }
+
+  function deleteList(){
+    dispatch(showModalInfo('Are you sure?', 'Delete', 'deleteList', 'List will be permanently deleted'))
+    dispatch(showConfirmModal(true))
   }
 
   return (
@@ -32,6 +36,7 @@ function TodoListHeader (){
         ></button>
         <button
           className={`${style.headingBtn} ${style.headingDelete}`}
+          onClick={() => deleteList()}
         ></button>
       </div>
     </div>

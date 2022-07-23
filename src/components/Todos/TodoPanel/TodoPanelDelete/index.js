@@ -1,8 +1,8 @@
 import style from './index.module.css'
 import { useShowDate } from '../../../../helpers'
 
-import { showPanelTodo, selectTodoId } from '../../../../storage/interface/actionsCreator'
-import { todoDelete } from '../../../../storage/content/actionsCreator'
+import { showPanelTodo } from '../../../../storage/interface/actionsCreator'
+import { showConfirmModal, showModalInfo } from '../../../../storage/interface/actionsCreator'
 import { useDispatch, useSelector } from 'react-redux';
 
 function TodoPanelDelete(){
@@ -17,10 +17,10 @@ function TodoPanelDelete(){
                                         .content.find(list => list.id === selectedListId)
                                         .todos.find(todo => todo.id === todoId)?.createDate)
 
-  function deleteTodo(){
-    dispatch(todoDelete(selectedListId, todoId));
-    dispatch(selectTodoId(0));
-    dispatch(showPanelTodo(false));
+
+  function showModal(){
+    dispatch(showConfirmModal(true));
+    dispatch(showModalInfo ('Are you sure?', 'Delete', 'deleteTask', 'Task will be permanently deleted'));
   }
 
   return (
@@ -32,7 +32,7 @@ function TodoPanelDelete(){
       <p>Created {useShowDate(createTodoDate)}</p>
       <span 
         className={style.todoPanelDelete}
-        onClick={deleteTodo}
+        onClick={() => showModal()}
         ></span>
     </div>
   )

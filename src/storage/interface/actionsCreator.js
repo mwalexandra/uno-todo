@@ -1,4 +1,4 @@
-import { SHOW_PANEL_TODO, SHOW_MODAL, MODAL_INFO,
+import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB  } from './actions';
 
 function showPanelTodo(show) {
@@ -10,11 +10,19 @@ function showPanelTodo(show) {
   }  
 }
 
-function showModal (changeModal, confirmModal) {
+function showChangeModal (changeModal) {
   return {
-    type: SHOW_MODAL,
+    type: SHOW_CHANGE_MODAL,
     payload: {
       changeModal,
+    }
+  } 
+}
+
+function showConfirmModal (confirmModal) {
+  return {
+    type: SHOW_CONFIRM_MODAL,
+    payload: {
       confirmModal,
     }
   } 
@@ -59,5 +67,5 @@ function setActiveTab(tab) {
   }
 }
 
-export {showPanelTodo, showModal, showModalInfo,
+export {showPanelTodo, showChangeModal, showConfirmModal, showModalInfo,
         selectTodoId, selectListId, setActiveTab}

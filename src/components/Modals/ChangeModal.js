@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './index.module.css'
-import { showModal } from '../../storage/interface/actionsCreator'
+import { showChangeModal } from '../../storage/interface/actionsCreator'
 import { changeHeader, todoAdd } from '../../storage/content/actionsCreator'
 import { useState } from 'react';
 
@@ -9,10 +9,9 @@ function ChangeModal(){
   const dispatch = useDispatch();
 
   const listId = useSelector(state => state.interface.listId)
-  const list = useSelector(state => state.lists.content.find(list => list.id === listId))
 
   //modal 
-  const show = useSelector(state => console.log(state.interface.showModal.changeModal))
+  const show = useSelector(state => state.interface.changeModal)
   const modal = useSelector(state => state.interface.modal)
 
   const [ currentValue, setCurrentValue ] = useState(modal.inputValue)
@@ -26,7 +25,7 @@ function ChangeModal(){
     //   dispatch(addList());
     // }
     setCurrentValue('');
-    dispatch(showModal(false, false));
+    dispatch(showChangeModal(false));
   }
 
 
@@ -39,11 +38,11 @@ function ChangeModal(){
           placeholder={modal.name}
           value={currentValue}
           onChange={(e) => setCurrentValue(e.target.value)}
-        ></input>
+        />
         <div className={style.btnWrapper}>
           <button 
             className={style.cancelBtn}
-            onClick={() => dispatch(showModal(false, false))}
+            onClick={() => dispatch(showChangeModal(false))}
           >Cancel</button>
           <button 
             disabled={!currentValue}

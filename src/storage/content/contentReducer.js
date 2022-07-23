@@ -1,5 +1,6 @@
 import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
-        CHANGE_HEADER, CHANGE_DATE, CHANGE_NOTE, CHANGE_TITLE } from './actions';
+        CHANGE_DATE, CHANGE_NOTE, CHANGE_TITLE,
+        CHANGE_HEADER, DELETE_LIST } from './actions';
 import { CreateDate } from '../../helpers';
 
 
@@ -123,18 +124,7 @@ function contentReducer(state = initialState, {type, payload}) {
             } 
             return list;
           })
-        } 
-
-      case CHANGE_HEADER:
-        return {
-          ...state,
-            content: state.content.map(list => {
-              if(list.id === payload.listId) {
-                list.header = payload.header
-              }
-              return list;
-            })
-          }    
+        }     
 
       case CHANGE_DATE:
         return {
@@ -181,6 +171,25 @@ function contentReducer(state = initialState, {type, payload}) {
               return list;
             })
           }
+
+        
+      case CHANGE_HEADER:
+        return {
+          ...state,
+            content: state.content.map(list => {
+              if(list.id === payload.listId) {
+                list.header = payload.header
+              }
+              return list;
+            })
+          }
+          
+      
+      case DELETE_LIST:
+        return {
+          ...state,
+          content: state.content = state.content.filter(list => list.id === payload.listId)
+        } 
 
     default: return state;    
   }

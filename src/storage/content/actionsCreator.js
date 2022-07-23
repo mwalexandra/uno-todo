@@ -1,5 +1,6 @@
 import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
-				CHANGE_HEADER, CHANGE_DATE, CHANGE_TITLE, CHANGE_NOTE } from './actions';
+				CHANGE_DATE, CHANGE_TITLE, CHANGE_NOTE,
+				DELETE_LIST, CHANGE_HEADER } from './actions';
 
 function todoAdd(listId, title) {
   return {
@@ -51,16 +52,6 @@ function todoDelete(listId, todoId) {
 	}
 }
 
-function changeHeader(listId, header) {
-	return {
-		type: CHANGE_HEADER,
-		payload: {
-			listId,
-			header,
-		}
-	}
-}
-
 function changeDate(listId, todoId, date) {
 	return {
 		type: CHANGE_DATE,
@@ -94,5 +85,25 @@ function changeNote(listId, todoId, note) {
 	}
 }
 
+function changeHeader(listId, header) {
+	return {
+		type: CHANGE_HEADER,
+		payload: {
+			listId,
+			header,
+		}
+	}
+}
+
+function deleteList(listId) {
+	return {
+		type: DELETE_LIST,
+		payload: {
+			listId,
+		}
+	}
+}
+
 export {todoAdd, todoComplete, todoImportant, todoSelected, todoDelete, 
-				changeHeader, changeDate, changeTitle, changeNote};
+				changeDate, changeTitle, changeNote,
+				changeHeader, deleteList};

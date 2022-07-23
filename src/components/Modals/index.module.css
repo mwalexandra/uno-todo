@@ -43,6 +43,15 @@
   color: rgba(28, 27, 31, 0.38);
 }
 
+.modalText {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(28, 27, 31, 0.38);
+}
+
 .btnWrapper{
   display: flex;
   justify-content: flex-end;
@@ -66,6 +75,11 @@ button:disabled{
 }
 .addBtn {
   background: #5946D2;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.confirmBtn {
+  background-color: #F85977;
   border-radius: 20px;
   color: #ffffff;
 }

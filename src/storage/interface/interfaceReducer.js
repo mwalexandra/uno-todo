@@ -1,4 +1,4 @@
-import { SHOW_PANEL_TODO, SHOW_MODAL, MODAL_INFO,
+import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB } from './actions';
 
 const initialState = {
@@ -6,14 +6,12 @@ const initialState = {
   todoId: 0,
   listId: 44444,
   tab: 'Todo',
-  showModal: {
-    changeModal: false,
-    confirmModal: false,
-  }, 
+  changeModal: false,
+  confirmModal: false,
   modal: {
-    name: '', // 'New list', 'Add a task', 'Rename list'
-    action: '', // addList, addTask, changeHeader
-    btnText: '', // '+ Create', '+ Add', 'Rename'
+    name: '', // 'New list', 'Add a task', 'Rename list', 'Are you sure?'
+    action: '', // addList, deleteList, addTask, deleteTask, changeHeader
+    btnText: '', // '+ Create', '+ Add', 'Rename', 'Delete'
     inputValue: '',
   }  
 };
@@ -28,12 +26,17 @@ function iterfaceReducer(state = initialState, {type, payload}) {
         show: payload.show,
     }
 
-    case SHOW_MODAL: 
+    case SHOW_CHANGE_MODAL: 
       return {
         ...state,
         changeModal: payload.changeModal,
-        confirmModal: payload.confirmModal,
       }
+
+    case SHOW_CONFIRM_MODAL: 
+      return {
+        ...state,
+        confirmModal: payload.confirmModal,
+    }  
 
     case MODAL_INFO:
       return {

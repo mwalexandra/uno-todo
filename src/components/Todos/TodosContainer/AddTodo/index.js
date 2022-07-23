@@ -1,6 +1,6 @@
 import style from './index.module.css'
 import { useDispatch } from 'react-redux';
-import {showModal, showModalInfo} from '../../../../storage/interface/actionsCreator.js'
+import {showChangeModal, showModalInfo} from '../../../../storage/interface/actionsCreator.js'
 
 
 function AddTodo(){
@@ -9,7 +9,7 @@ function AddTodo(){
 
   function showAddModal(){
     dispatch(showModalInfo ('Add Todo', '+ Add', 'todoAdd', ''))
-    dispatch(showModal(true))
+    dispatch(showChangeModal(true))
   }
 
   return (  
