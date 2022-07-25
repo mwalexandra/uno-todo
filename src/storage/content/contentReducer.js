@@ -1,6 +1,6 @@
 import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
         CHANGE_DATE, CHANGE_NOTE, CHANGE_TITLE,
-        CHANGE_HEADER, DELETE_LIST } from './actions';
+        ADD_LIST, CHANGE_HEADER, DELETE_LIST } from './actions';
 import { CreateDate } from '../../helpers';
 
 
@@ -172,7 +172,20 @@ function contentReducer(state = initialState, {type, payload}) {
             })
           }
 
-        
+      // TODO !!!
+      case ADD_LIST: 
+        console.log(state.content);
+        return {
+          ...state,
+          content: state.content.push({
+                  id: Date.now(),
+                  header: payload.header,
+                  selected: true,
+                  todos: [],
+                    })
+            }
+      
+
       case CHANGE_HEADER:
         return {
           ...state,
@@ -188,7 +201,7 @@ function contentReducer(state = initialState, {type, payload}) {
       case DELETE_LIST:
         return {
           ...state,
-          content: state.content = state.content.filter(list => list.id === payload.listId)
+          content: state.content = state.content.filter(list => list.id !== payload.listId)
         } 
 
     default: return state;    

@@ -23,7 +23,7 @@ function ConfirmModal(){
       dispatch(showPanelTodo(false));
     } else if (modal.action === 'deleteList') {
       dispatch(deleteList(listId));
-      dispatch(selectListId(0));
+      dispatch(selectListId(null));
     } 
     dispatch(showConfirmModal(false));
   }

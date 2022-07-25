@@ -15,7 +15,7 @@ function TodoPanelDelete(){
 
   const createTodoDate = useSelector(state => state.lists
                                         .content.find(list => list.id === selectedListId)
-                                        .todos.find(todo => todo.id === todoId)?.createDate)
+                                        ?.todos.find(todo => todo.id === todoId)?.createDate)
 
 
   function showModal(){

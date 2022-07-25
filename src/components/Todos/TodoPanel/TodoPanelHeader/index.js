@@ -13,11 +13,11 @@ function TodoPanelHeader(){
 
   const title = useSelector(state => 
                               state.lists.content.find(list => list.id === selectedListId)
-                              .todos.find(todo => todo.id === todoId)?.title)
+                              ?.todos.find(todo => todo.id === todoId)?.title)
 
   const completed = useSelector(state => 
                                   state.lists.content.find(list => list.id === selectedListId)
-                                  .todos.find(todo => todo.id === todoId)?.completed)
+                                  ?.todos.find(todo => todo.id === todoId)?.completed)
 
   return (
     <div className={style.todoPanelHeader}>

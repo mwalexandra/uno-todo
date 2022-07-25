@@ -18,7 +18,7 @@ function TodoPanelDate(){
     state => 
       state.lists
         .content.find( list =>  list.id === selectedListId)
-        .todos.find( todoItem => selectedTodoId === todoItem.id)?.date
+        ?.todos.find( todoItem => selectedTodoId === todoItem.id)?.date
   )
 
   return (

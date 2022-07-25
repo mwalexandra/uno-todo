@@ -12,7 +12,7 @@ function TodoPanelNote(){
 
   const note = useSelector(state => 
                               state.lists.content.find(list => list.id === selectedListId)
-                              .todos.find(todo => todo.id === todoId)?.note)
+                              ?.todos.find(todo => todo.id === todoId)?.note)
   
   return (
     <div className={style.todoPanelNote}>

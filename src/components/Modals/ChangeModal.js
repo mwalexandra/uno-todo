@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './index.module.css'
 import { showChangeModal } from '../../storage/interface/actionsCreator'
-import { changeHeader, todoAdd } from '../../storage/content/actionsCreator'
+import { changeHeader, todoAdd, addList } from '../../storage/content/actionsCreator'
 import { useState } from 'react';
 
 function ChangeModal(){
@@ -20,10 +20,11 @@ function ChangeModal(){
     if(modal.action === 'changeHeader'){
       dispatch(changeHeader(listId, value)); 
     } else if (modal.action === 'todoAdd') {
-      dispatch(todoAdd(listId, value));}
-    // } else if (action === 'addList') {
-    //   dispatch(addList());
-    // }
+      dispatch(todoAdd(listId, value));
+    } else if (modal.action === 'addList') {
+      setCurrentValue('');
+      dispatch(addList(value));
+    }
     setCurrentValue('');
     dispatch(showChangeModal(false));
   }

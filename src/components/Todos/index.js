@@ -1,7 +1,6 @@
 import style from './index.module.css';
 import TodosContainer from './TodosContainer'
 import TodoPanel from './TodoPanel'
-import { useSelector } from 'react-redux';
 
 function Todos() {
 
