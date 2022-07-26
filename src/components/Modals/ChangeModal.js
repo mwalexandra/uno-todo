@@ -22,7 +22,6 @@ function ChangeModal(){
     } else if (modal.action === 'todoAdd') {
       dispatch(todoAdd(listId, value));
     } else if (modal.action === 'addList') {
-      setCurrentValue('');
       dispatch(addList(value));
     }
     setCurrentValue('');

@@ -172,19 +172,17 @@ function contentReducer(state = initialState, {type, payload}) {
             })
           }
 
-      // TODO !!!
       case ADD_LIST: 
-        console.log(state.content);
+        state.content.push({
+          id: Date.now(),
+          header: payload.header,
+          selected: true,
+          todos: [],
+        })
         return {
           ...state,
-          content: state.content.push({
-                  id: Date.now(),
-                  header: payload.header,
-                  selected: true,
-                  todos: [],
-                    })
-            }
-      
+            content: state.content
+        }
 
       case CHANGE_HEADER:
         return {
