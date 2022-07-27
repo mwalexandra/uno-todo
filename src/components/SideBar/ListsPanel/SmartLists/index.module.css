@@ -1,0 +1,30 @@
+.smartLists {
+  padding: 25px 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(28, 27, 31, 0.12);
+}
+.smartListItem{
+  display: flex;
+  padding: 10px 12px;
+}
+.smartListItem p{
+  margin-left: 1rem;
+}
+.icon{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.tasksIcon{
+  background-image: url('../../../../img/house_siding.svg');
+}
+.importantIcon{
+  background-image: url('../../../../img/important.svg');
+}
+.arrow{
+  margin-left: auto;
+  background-image: url('../../../../img/chevron_right.svg');
+}

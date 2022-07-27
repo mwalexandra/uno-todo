@@ -1,7 +1,11 @@
+import SmartLists from './SmartLists'
+import MyTasks from './MyTasks'
+
 function ListsPanel() {
   return (
     <>
-      <h1>ListsPanel</h1>
+      <SmartLists />
+      <MyTasks />
     </>
   )
 }

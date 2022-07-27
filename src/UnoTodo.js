@@ -9,14 +9,13 @@ import { useSelector } from 'react-redux';
 function UnoTodo() {
 
   const lists = useSelector(state => state.lists.content)
-  const sidebar = {
+  const main = {
     display: 'flex',
-    width: '280px',
   }
   // useMemo(()=>{console.log(lists)},[lists])
 
   return (
-    <div style={sidebar}>
+    <div style={main}>
       <SideBar />
       
       {

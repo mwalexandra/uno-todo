@@ -1,3 +1,4 @@
 .todos {
+  flex-grow: 3;
   background-color: #B0A2F2;
 }

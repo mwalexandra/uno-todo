@@ -34,6 +34,7 @@ function ChangeModal(){
       <div className={style.modal}>
         <h3 className={style.modalHeader}>{modal.name}</h3>
         <input
+          type='text'
           className={style.modalInput}
           placeholder={modal.name}
           value={currentValue}

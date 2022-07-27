@@ -1,5 +1,6 @@
 .addButton {
   display: block;
+  margin-top: auto;
   height: 40px;
   width: 100%;
   font-size: larger;
