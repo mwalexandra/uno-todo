@@ -21,10 +21,17 @@ function TodoList() {
       state.lists.content.find( list =>  list.id === selectedListId)?.todos.filter(todo => todo.completed)
   )
 
+  const importantsTodos = useSelector(
+    state => 
+      state.lists.content.find( list =>  list)?.todos.filter(todo => todo.important)
+  )
+
   let renderTodos = [];
 
   if(tab === 'Completed'){
     renderTodos = completedTodos;
+  } else if (tab === 'Importants') {
+    renderTodos = importantsTodos;
   } else {
     renderTodos = todos;
   }

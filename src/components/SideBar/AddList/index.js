@@ -9,7 +9,7 @@ function AddList(){
   const dispatch = useDispatch();
 
   function showAddModal(){
-    dispatch(showModalInfo ('Add List', '+ Add', 'listAdd', ''))
+    dispatch(showModalInfo ('Add List', '+ Add', 'addList', ''))
     dispatch(showChangeModal(true))
   }
 

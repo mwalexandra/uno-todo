@@ -6,6 +6,7 @@
 .smartListItem{
   display: flex;
   padding: 10px 12px;
+  cursor: pointer;
 }
 .smartListItem p{
   margin-left: 1rem;
@@ -27,4 +28,8 @@
 .arrow{
   margin-left: auto;
   background-image: url('../../../../img/chevron_right.svg');
+}
+
+.selected {
+  background-color: rgba(89, 70, 210, 0.08);
 }
