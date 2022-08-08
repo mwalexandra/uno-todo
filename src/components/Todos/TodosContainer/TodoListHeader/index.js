@@ -16,6 +16,8 @@ function TodoListHeader (){
         .content.find( list =>  list.id === selectedListId)?.header
   )
 
+  const tab = useSelector(state => state.interface.tab);
+
   function changeHeader(){
     dispatch(showModalInfo('Rename list', 'Rename', 'changeHeader', header))
     dispatch(showChangeModal(true))
@@ -28,7 +30,9 @@ function TodoListHeader (){
 
   return (
     <div className={style.headingWrapper}>
-      <h1 className={style.todosHeading}>{header}</h1>
+      <h1 className={style.todosHeading}>{
+        tab === 'Importants' ? 'Important' :  header
+        }</h1>
       <div className={style.headingBtnWrapper}>
         <button
           className={`${style.headingBtn} ${style.headingEdit}`}

@@ -6,43 +6,42 @@ import { CreateDate } from '../../helpers';
 
 const initialState = {
   content: [
-    {
-      id: 44444,
-      header: 'Task list',
-      selected: true,
-      todos: [
-        {
-          id: '11111',
-          title: 'Todo 1',
-          note: 'Do something important',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-          selected: false,
-        },
-        {
-          id: '22222',
-          title: 'Todo 2',
-          note: 'Do something important',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-          selected: false,
-        },
-        {
-          id: '33333',
-          title: 'Todo 3',
-          note: 'Do something',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-          selected: false,
-        },
-      ]
-    },
+    // {
+    //   id: 44444,
+    //   header: 'Task list',
+    //   todos: [
+    //     {
+    //       id: '11111',
+    //       title: 'Todo 1',
+    //       note: 'Do something important',
+    //       date: CreateDate(),
+    //       createDate: CreateDate(),
+    //       completed: true,
+    //       important: true,
+    //       selected: false,
+    //     },
+    //     {
+    //       id: '22222',
+    //       title: 'Todo 2',
+    //       note: 'Do something important',
+    //       date: CreateDate(),
+    //       createDate: CreateDate(),
+    //       completed: true,
+    //       important: true,
+    //       selected: false,
+    //     },
+    //     {
+    //       id: '33333',
+    //       title: 'Todo 3',
+    //       note: 'Do something',
+    //       date: CreateDate(),
+    //       createDate: CreateDate(),
+    //       completed: true,
+    //       important: true,
+    //       selected: false,
+    //     },
+    //   ]
+    // },
   ]
 }
 
@@ -171,17 +170,16 @@ function contentReducer(state = initialState, {type, payload}) {
               return list;
             })
           }
-
+          
+//lists
       case ADD_LIST: 
-        state.content.push({
-          id: Date.now(),
-          header: payload.header,
-          selected: true,
-          todos: [],
-        })
         return {
           ...state,
-            content: state.content
+          content: [...state.content, {
+              id: Date.now(),
+              header: payload.header,
+              todos: [],
+            }],
         }
 
       case CHANGE_HEADER:

@@ -6,7 +6,9 @@ function TodoCompleted({todoId}) {
 
   const dispatch = useDispatch();
 
-  const selectedListId = useSelector(state => state.lists.content.find(list => list.selected).id)
+  const selectedListId = useSelector(
+    state => state.interface.listId
+  )
 
   const completed = useSelector(
     state => state.lists.content.find(

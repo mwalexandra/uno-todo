@@ -2,29 +2,3 @@
   padding: 25px 0;
   list-style: none;
 }
-.myTasksItem{
-  display: flex;
-  padding: 10px 12px;
-}
-.myTasksItem p{
-  margin-left: 1rem;
-}
-.icon{
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.listIcon{
-  background-image: url('../../../../img/Icon.svg');
-}
-.arrow{
-  margin-left: auto;
-  background-image: url('../../../../img/chevron_right.svg');
-}
-
-.selected {
-  background-color: rgba(89, 70, 210, 0.08);
-}

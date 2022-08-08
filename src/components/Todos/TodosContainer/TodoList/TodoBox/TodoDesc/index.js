@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 function TodoDesc({todoId}) {
 
   const selectedListId = useSelector(
-    state => state.lists.content.find(list => list.selected).id
+    state => state.interface.listId
   )
 
   const todo = useSelector(

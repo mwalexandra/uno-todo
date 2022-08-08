@@ -9,6 +9,8 @@ function ConfirmModal(){
 
   const dispatch = useDispatch();
 
+  const lists = useSelector(state => state.lists.content)
+
   const listId = useSelector(state => state.interface.listId)
   const todoId = useSelector(state => state.interface.todoId)  
 
@@ -19,11 +21,10 @@ function ConfirmModal(){
   function modalAction(){   // deleteTodo, deleteList
     if(modal.action === 'deleteTask'){
       dispatch(todoDelete(listId, todoId)); 
-      dispatch(selectTodoId(0));
       dispatch(showPanelTodo(false));
     } else if (modal.action === 'deleteList') {
       dispatch(deleteList(listId));
-      dispatch(selectListId(null));
+      dispatch(selectListId(null))
     } 
     dispatch(showConfirmModal(false));
   }

@@ -17,33 +17,38 @@ function TodosContainer() {
     state => state.interface.listId
   )
 
+  //console.log(selectedListId);
+
   const todos = useSelector(
     state => 
       state.lists.content.find(list => list.id === selectedListId)?.todos
   )
+
+  //console.log(todos);
 
   return (
     <>
       <main className={`${style.todosContainer} ${showPanelTodo ? style.showPanel : ''}`}>
 
       {
-        todos.length === 0 ? <Placeholder name={'task'}/>
-      : <section className={style.todosSection}>
-          <TodoListHeader />
+        todos.length === 0 
+        ? <Placeholder name={'task'}/>
+        : <section className={style.todosSection}>
 
-          <div>
-          {/* TODO вынести в отдельный компонент switcher */}
-            <button
-              className={`${style.todosBtn} ${tab === 'Todo' ? style.active : ''}`}
-              onClick={() => dispatch(setActiveTab('Todo'))}
-            >To Do</button>
-            <button
-              className={`${style.todosBtn} ${tab === 'Completed' ? style.active : ''}`}
-              onClick={() => dispatch(setActiveTab('Completed'))}
-            >Completed</button>
-          </div>
+            <TodoListHeader />
+            <div>
+            {/* TODO вынести в отдельный компонент switcher */}
+              <button
+                className={`${style.todosBtn} ${tab === 'Todo' ? style.active : ''}`}
+                onClick={() => dispatch(setActiveTab('Todo'))}
+              >To Do</button>
+              <button
+                className={`${style.todosBtn} ${tab === 'Completed' ? style.active : ''}`}
+                onClick={() => dispatch(setActiveTab('Completed'))}
+              >Completed</button>
+            </div>
+            <TodoList />
 
-          <TodoList />
           <AddTodo />
         </section>
       }

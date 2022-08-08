@@ -3,8 +3,8 @@ import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
 
 const initialState = {
   show: false,
-  todoId: 0,
-  listId: 44444,
+  todoId: null,
+  listId: null,
   tab: 'Todo',
   changeModal: false,
   confirmModal: false,

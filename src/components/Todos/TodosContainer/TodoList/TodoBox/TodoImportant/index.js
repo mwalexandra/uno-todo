@@ -7,7 +7,7 @@ function TodoImportant({todoId}) {
   const dispatch = useDispatch();
 
   const selectedListId = useSelector(
-    state => state.lists.content.find(list => list.selected).id
+    state => state.interface.listId
   )
 
   function importantClick(e) {
