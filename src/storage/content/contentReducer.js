@@ -4,44 +4,65 @@ import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
 import { CreateDate } from '../../helpers';
 
 
-const initialState = {
+export const initialState = {
   content: [
-    // {
-    //   id: 44444,
-    //   header: 'Task list',
-    //   todos: [
-    //     {
-    //       id: '11111',
-    //       title: 'Todo 1',
-    //       note: 'Do something important',
-    //       date: CreateDate(),
-    //       createDate: CreateDate(),
-    //       completed: true,
-    //       important: true,
-    //       selected: false,
-    //     },
-    //     {
-    //       id: '22222',
-    //       title: 'Todo 2',
-    //       note: 'Do something important',
-    //       date: CreateDate(),
-    //       createDate: CreateDate(),
-    //       completed: true,
-    //       important: true,
-    //       selected: false,
-    //     },
-    //     {
-    //       id: '33333',
-    //       title: 'Todo 3',
-    //       note: 'Do something',
-    //       date: CreateDate(),
-    //       createDate: CreateDate(),
-    //       completed: true,
-    //       important: true,
-    //       selected: false,
-    //     },
-    //   ]
-    // },
+    {
+      id: 44444,
+      header: 'Task list',
+      todos: [
+        {
+          id: '11111',
+          title: 'Todo 1',
+          note: 'Do something important',
+          date: CreateDate(),
+          createDate: CreateDate(),
+          completed: true,
+          important: true,
+        },
+        {
+          id: '22222',
+          title: 'Todo 2',
+          note: 'Do something important',
+          date: CreateDate(),
+          createDate: CreateDate(),
+          completed: true,
+          important: true,
+        },
+        {
+          id: '33333',
+          title: 'Todo 3',
+          note: 'Do something',
+          date: CreateDate(),
+          createDate: CreateDate(),
+          completed: true,
+          important: true,
+        },
+      ]
+    },
+    {
+      id: 55555,
+      header: 'Task list 2',
+      todos: [
+        {
+          id: '1111122',
+          title: 'Todo 1',
+          note: 'Do something important',
+          date: CreateDate(),
+          createDate: CreateDate(),
+          completed: true,
+          important: true,
+        },
+        {
+          id: '2222233',
+          title: 'Todo 2',
+          note: 'Do something important',
+          date: CreateDate(),
+          createDate: CreateDate(),
+          completed: true,
+          important: true,
+        },
+      ]  
+    }    
   ]
 }
 

@@ -1,4 +1,6 @@
 .searchForm{
+  display: flex;
+  flex-wrap: nowrap;
   margin-bottom: 20px;
   padding: 9px 13px;
   background-color: rgba(28, 27, 31, 0.08);

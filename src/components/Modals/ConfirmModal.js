@@ -3,6 +3,7 @@ import style from './index.module.css'
 import { showConfirmModal } from '../../storage/interface/actionsCreator'
 import { todoDelete, deleteList } from '../../storage/content/actionsCreator'
 import { showPanelTodo, selectTodoId, selectListId } from '../../storage/interface/actionsCreator'
+import { useEffect } from 'react';
 
 
 function ConfirmModal(){
@@ -10,9 +11,15 @@ function ConfirmModal(){
   const dispatch = useDispatch();
 
   const lists = useSelector(state => state.lists.content)
+  let listId = useSelector(state => state.interface.listId)
+  let todoId = useSelector(state => state.interface.todoId)  
+  const todos = useSelector(state => state.lists.content.find(list => list.id === listId)?.todos)
 
-  const listId = useSelector(state => state.interface.listId)
-  const todoId = useSelector(state => state.interface.todoId)  
+    if(!lists){
+      listId = 0
+    } else if (!todos){
+      todoId = 0
+    }
 
   //modal 
   const isShownModal = useSelector(state => state.interface.confirmModal)
@@ -20,11 +27,12 @@ function ConfirmModal(){
 
   function modalAction(){   // deleteTodo, deleteList
     if(modal.action === 'deleteTask'){
-      dispatch(todoDelete(listId, todoId)); 
-      dispatch(showPanelTodo(false));
+      dispatch(todoDelete(listId, todoId))
+      dispatch(selectTodoId(0))
+      dispatch(showPanelTodo(false))
     } else if (modal.action === 'deleteList') {
       dispatch(deleteList(listId));
-      dispatch(selectListId(null))
+      dispatch(selectListId(0))
     } 
     dispatch(showConfirmModal(false));
   }

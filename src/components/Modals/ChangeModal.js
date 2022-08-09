@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import style from './index.module.css'
 import { showChangeModal, selectListId } from '../../storage/interface/actionsCreator'
 import { changeHeader, todoAdd, addList } from '../../storage/content/actionsCreator'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function ChangeModal(){
 
@@ -15,7 +15,8 @@ function ChangeModal(){
   const show = useSelector(state => state.interface.changeModal)
   const modal = useSelector(state => state.interface.modal)
 
-  const [ currentValue, setCurrentValue ] = useState(modal.inputValue) // TODO не присваивается значение по умолчанию
+  const [ currentValue, setCurrentValue ] = useState('') 
+  useEffect(() => {setCurrentValue(modal.inputValue)}, [modal])
 
   function modalAction(value){   // addList, todoAdd, changeHeader
     if(modal.action === 'changeHeader'){

@@ -19,7 +19,6 @@ const selectedTodoId = useSelector(state => state.interface.todoId);
 
     if (todoId === selectedTodoId) {
       dispatch(showPanelTodo(!isShownPanelTodo));
-
     } else {
       dispatch(showPanelTodo(true));
     }

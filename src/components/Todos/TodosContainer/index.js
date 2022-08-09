@@ -13,6 +13,7 @@ function TodosContainer() {
   const selectedListId = useSelector(
     state => state.interface.listId
   )
+  console.log(selectedListId);
 
   const todos = useSelector(
     state => 
@@ -29,13 +30,13 @@ function TodosContainer() {
         todos.length === 0 
         ? <Placeholder name={'task'}/>
         : <section className={style.todosSection}>
-          <TodoListHeader />
-          {
-            tab !== 'Importants' ? <TabSwitcher /> : <div></div>
-          }
-          <TodoList />
-          <AddTodo />
-        </section>
+            <TodoListHeader />
+            {
+              tab !== 'Importants' ? <TabSwitcher /> : <div></div>
+            }
+            <TodoList />
+            <AddTodo />
+          </section>
       }
       </main>
     </>

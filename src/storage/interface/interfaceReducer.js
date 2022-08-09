@@ -1,10 +1,13 @@
+import { initialState as listsContent } from '../content/contentReducer';
 import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB } from './actions';
 
+const lists = listsContent.content
+
 const initialState = {
   show: false,
-  todoId: null,
-  listId: null,
+  todoId: lists[lists.length - 1].todos[0].id | 0,
+  listId: lists[lists.length - 1].id | 0,
   tab: 'Todo',
   changeModal: false,
   confirmModal: false,
