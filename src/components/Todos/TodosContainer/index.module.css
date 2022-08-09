@@ -17,15 +17,3 @@
   height: 100vh;
   padding: 20px;
 }
-
-.todosBtn{
-  padding: 13px 55px;
-  color: #1C1B1F61;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #C8BFFF;
-}
-.active{
-  color: #5946D2;
-  border-bottom-color: #5946D2;
-}
