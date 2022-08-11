@@ -4,7 +4,6 @@ import TodoPanel from './TodoPanel'
 import { useSelector } from 'react-redux';
 
 function Todos() {
-
   const tab = useSelector(state => state.interface.tab);
 
   return (

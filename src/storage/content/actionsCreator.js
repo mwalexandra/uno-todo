@@ -2,12 +2,14 @@ import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
 				CHANGE_DATE, CHANGE_TITLE, CHANGE_NOTE,
 				ADD_LIST, DELETE_LIST, CHANGE_HEADER } from './actions';
 
-function todoAdd(listId, title) {
+
+function todoAdd(listId, title, important) {
   return {
     type: TODO_ADD, 
     payload: {
       listId,
 			title,
+			important,
     }
   }
 }

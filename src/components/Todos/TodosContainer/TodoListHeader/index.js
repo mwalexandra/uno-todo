@@ -19,6 +19,7 @@ function TodoListHeader (){
   const tab = useSelector(state => state.interface.tab);
 
   function changeHeader(){
+    console.log(header);
     dispatch(showModalInfo('Rename list', 'Rename', 'changeHeader', header))
     dispatch(showChangeModal(true))
   }

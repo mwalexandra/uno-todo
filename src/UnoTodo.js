@@ -9,6 +9,9 @@ import { useSelector } from 'react-redux';
 function UnoTodo() {
 
   const lists = useSelector(state => state.lists.content)
+  const changeModal = useSelector(state => state.interface.changeModal)
+  const confirmModal = useSelector(state => state.interface.confirmModal)
+
   const main = {
     display: 'flex',
   }
@@ -24,8 +27,15 @@ function UnoTodo() {
         : <Todos />
       }
 
-      <ChangeModal />
-      <ConfirmModal />
+      {
+        changeModal ? <ChangeModal /> : undefined
+      }
+
+      {
+        confirmModal ? <ConfirmModal /> : undefined
+      }
+       
+      
     </div>
   )
 }

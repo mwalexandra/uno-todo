@@ -3,8 +3,7 @@ import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
         ADD_LIST, CHANGE_HEADER, DELETE_LIST } from './actions';
 import { CreateDate } from '../../helpers';
 
-
-export const initialState = {
+export const initialContentState = {
   content: [
     {
       id: 44444,
@@ -66,7 +65,7 @@ export const initialState = {
   ]
 }
 
-function contentReducer(state = initialState, {type, payload}) {
+function contentReducer(state = initialContentState, {type, payload}) {
   switch(type){
 
     case TODO_ADD:
@@ -77,6 +76,7 @@ function contentReducer(state = initialState, {type, payload}) {
               list.todos.push({
                 id: Date.now(),
                 title: payload.title,
+                important: payload.important,
                 note: 'no notes',
                 date: Date.now(),
                 createDate: Date.now(),
@@ -95,6 +95,7 @@ function contentReducer(state = initialState, {type, payload}) {
                 if(todo.id === payload.todoId){
                   todo.completed = !todo.completed;
                 }
+                return todo
               })
             }
             return list;
@@ -110,6 +111,7 @@ function contentReducer(state = initialState, {type, payload}) {
                 if(todo.id === payload.todoId){
                   todo.important = !todo.important;
                 }
+                return todo
               })
             }
             return list;
@@ -127,6 +129,7 @@ function contentReducer(state = initialState, {type, payload}) {
               } else {
                 todo.selected = false;
               }
+              return todo
             })
           } else {
             list.todos.map(todo => todo.selected = false)
@@ -155,6 +158,7 @@ function contentReducer(state = initialState, {type, payload}) {
                   if(todo.id === payload.todoId){
                     todo.date = payload.date;
                   }
+                  return todo
                 })
               }
               return list;
@@ -170,6 +174,7 @@ function contentReducer(state = initialState, {type, payload}) {
                   if(todo.id === payload.todoId){
                     todo.note = payload.note;
                   }
+                  return todo
                 })
               }
               return list;
@@ -194,6 +199,7 @@ function contentReducer(state = initialState, {type, payload}) {
           
 //lists
       case ADD_LIST: 
+      console.log(state);
         return {
           ...state,
           content: [...state.content, {

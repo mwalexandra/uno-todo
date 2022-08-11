@@ -22,14 +22,7 @@ function TodoList() {
 
   const importantsTodos = useSelector(
     state => 
-      state.lists.content.find(list =>  list)?.todos.filter(todo => todo.important)
-  )
-
-  const allTodos = []
-  useSelector(
-    state => state.lists.content.forEach(
-      list => allTodos.concat(list.todos)
-    )
+      state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.important)
   )
 
   let renderTodos = [];
@@ -38,8 +31,6 @@ function TodoList() {
     renderTodos = completedTodos;
   } else if (tab === 'Importants') {
     renderTodos = importantsTodos;
-  } else if (tab === 'Todos') {
-    renderTodos = allTodos;
   } else {
     renderTodos = todos;
   }

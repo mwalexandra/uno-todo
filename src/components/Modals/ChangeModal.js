@@ -2,11 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import style from './index.module.css'
 import { showChangeModal, selectListId } from '../../storage/interface/actionsCreator'
 import { changeHeader, todoAdd, addList } from '../../storage/content/actionsCreator'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function ChangeModal(){
 
   const dispatch = useDispatch();
+
+  const tab = useSelector(state => state.interface.tab)
 
   const listId = useSelector(state => state.interface.listId)
   const lists = useSelector(state => state.lists.content)
@@ -14,17 +16,19 @@ function ChangeModal(){
   //modal 
   const show = useSelector(state => state.interface.changeModal)
   const modal = useSelector(state => state.interface.modal)
+  const inputValue = useSelector(state => state.interface.modal.inputValue)
 
-  const [ currentValue, setCurrentValue ] = useState('') 
-  useEffect(() => {setCurrentValue(modal.inputValue)}, [modal])
+  const [ currentValue, setCurrentValue ] = useState(inputValue) 
+
 
   function modalAction(value){   // addList, todoAdd, changeHeader
     if(modal.action === 'changeHeader'){
       dispatch(changeHeader(listId, value)); 
     } else if (modal.action === 'todoAdd') {
-      dispatch(todoAdd(listId, value));
+      const important = tab === 'Importants' ? true : false
+      dispatch(todoAdd(listId, value, important))
     } else if (modal.action === 'addList') {
-      dispatch(addList(value));
+      dispatch(addList(value)); // TODO thunk !! внутри reducer (поменять id листа)
     }
     setCurrentValue('');
     dispatch(showChangeModal(false));

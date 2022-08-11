@@ -10,8 +10,8 @@ function TabSwitcher(){
   return (
     <div>
       <button
-        className={`${style.todosBtn} ${tab === 'Todo' ? style.active : ''}`}
-        onClick={() => dispatch(setActiveTab('Todo'))}
+        className={`${style.todosBtn} ${tab === 'Todos' ? style.active : ''}`}
+        onClick={() => dispatch(setActiveTab('Todos'))}
       >To Do</button>
       <button
         className={`${style.todosBtn} ${tab === 'Completed' ? style.active : ''}`}

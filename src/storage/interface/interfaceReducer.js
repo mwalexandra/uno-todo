@@ -1,14 +1,14 @@
-import { initialState as listsContent } from '../content/contentReducer';
+import { initialContentState as listsContent } from '../content/contentReducer';
 import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB } from './actions';
 
 const lists = listsContent.content
 
-const initialState = {
+export const initialInterfaceState = {
   show: false,
-  todoId: lists[lists.length - 1].todos[0].id | 0,
-  listId: lists[lists.length - 1].id | 0,
-  tab: 'Todo',
+  todoId: lists[0]?.todos[0]?.id | null,
+  listId: lists[0]?.id | null,
+  tab: 'Todos',
   changeModal: false,
   confirmModal: false,
   modal: {
@@ -19,7 +19,7 @@ const initialState = {
   }  
 };
 
-function iterfaceReducer(state = initialState, {type, payload}) {
+function iterfaceReducer(state = initialInterfaceState, {type, payload}) {
 
   switch(type){
 

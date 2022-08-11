@@ -19,7 +19,7 @@ function TodoImportant({todoId}) {
     state => 
       state.lists.content
         .find( list =>  list.id === selectedListId)
-        .todos.find( todoItem => todoId === todoItem.id)?.important
+        ?.todos.find( todoItem => todoId === todoItem.id)?.important
   )
 
   return(

@@ -26,8 +26,8 @@ function TodosContainer() {
     <>
       <main className={`${style.todosContainer} ${showPanelTodo ? style.showPanel : ''}`}>
 
-      {
-        todos.length === 0 
+      { 
+        !todos || todos.length === 0 
         ? <Placeholder name={'task'}/>
         : <section className={style.todosSection}>
             <TodoListHeader />
