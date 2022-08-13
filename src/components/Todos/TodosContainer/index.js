@@ -13,7 +13,6 @@ function TodosContainer() {
   const selectedListId = useSelector(
     state => state.interface.listId
   )
-  console.log(selectedListId);
 
   const todos = useSelector(
     state => 
