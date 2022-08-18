@@ -21,6 +21,8 @@ function TodosContainer() {
 
   const tab = useSelector(state => state.interface.tab)
 
+  const searchString = useSelector(state => state.interface.searchString)
+
   return (
     <>
       <main className={`${style.todosContainer} ${showPanelTodo ? style.showPanel : ''}`}>
@@ -31,7 +33,8 @@ function TodosContainer() {
         : <section className={style.todosSection}>
             <TodoListHeader />
             {
-              tab !== 'Importants' ? <TabSwitcher /> : <div></div>
+              tab === 'Importants' || searchString
+              ? undefined : <TabSwitcher /> 
             }
             <TodoList />
             <AddTodo />

@@ -1,21 +1,15 @@
 .searchForm{
   display: flex;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
-  padding: 9px 13px;
+  padding: 9px 10px;
   background-color: rgba(28, 27, 31, 0.08);
   border-bottom: 2px solid rgba(28, 27, 31, 0.38);
 }
-.searchBtn{
-  width: 27px;
-  height: 27px;
-  border: none;
-  background: url('../../../img/search.svg') no-repeat;
-  background-position: center 4px;
-  background-size: contain;
-}
 .searchInput{
-  margin-left: 11.5px;
+  padding-left: 30px;
+  max-width: 10rem;
   background-color: transparent;
   border: none;
   font-weight: 500;
@@ -23,4 +17,12 @@
   line-height: 24px;
   letter-spacing: 0.5px;
   color: rgba(28, 27, 31, 0.38);
+  background: url('../../../img/search.svg') no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+.searchClean{
+  color: rgba(28, 27, 31, 0.38);
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
-        SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB  } from './actions';
+        SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB,
+        SEARCH_STRING } from './actions';
 
 function showPanelTodo(show) {
   return {
@@ -67,5 +68,14 @@ function setActiveTab(tab) {
   }
 }
 
+function setSearchString (searchString) {
+  return {
+    type: SEARCH_STRING,
+    payload: {
+      searchString,
+    }
+  }
+}
+
 export {showPanelTodo, showChangeModal, showConfirmModal, showModalInfo,
-        selectTodoId, selectListId, setActiveTab}
+        selectTodoId, selectListId, setActiveTab, setSearchString}

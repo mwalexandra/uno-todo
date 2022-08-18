@@ -25,14 +25,20 @@ function TodoList() {
       state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.important)
   )
 
+  const searchString = useSelector(state => state.interface.searchString)
+  
   let renderTodos = [];
 
-  if(tab === 'Completed'){
-    renderTodos = completedTodos;
-  } else if (tab === 'Importants') {
-    renderTodos = importantsTodos;
+  if(searchString){
+    renderTodos = todos.filter(todo => todo.title.toLowerCase().includes(searchString.toLowerCase()))
   } else {
-    renderTodos = todos;
+    if(tab === 'Completed'){
+      renderTodos = completedTodos;
+    } else if (tab === 'Importants') {
+      renderTodos = importantsTodos;
+    } else {
+      renderTodos = todos;
+    }
   }
 
   return (

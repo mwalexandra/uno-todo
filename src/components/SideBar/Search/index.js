@@ -1,22 +1,30 @@
-import { useState } from "react";
+import { setSearchString } from "../../../storage/interface/actionsCreator";
+import { useDispatch, useSelector } from "react-redux";
 import style from './index.module.css'
 
 function Search() {
-const [value, setValue] = useState();
+
+  const dispatch = useDispatch()
+  const searchString = useSelector(state => state.interface.searchString)
 
   return (
     <>
       <form className={style.searchForm}>
-        <button 
-          className={style.searchBtn}
-          // onClick={() => dispatch(search(value))}
-        ></button>
         <input
           className={style.searchInput}
           placeholder='Search'
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
+          value={searchString}
+          onChange={(e) => dispatch(setSearchString(e.target.value))}
         />
+        {
+          searchString 
+          ? <span 
+            className={style.searchClean}
+            onClick={() => dispatch(setSearchString(''))}
+          >X</span>
+          : undefined 
+        }
+          
       </form>
     </>
   )
