@@ -1,14 +1,20 @@
 .placeholderWrapper{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
-  background: #F4F4F4;
 }
 
-.placeholder{
-  
+.placeholder {
+  margin: auto;
+}
+
+.placeholderImportants {
+  color: rgba(255, 255, 255, 1);
+  background: #F85977;
+}
+
+.placeholderTasks {
+  color: rgba(28, 27, 31, 0.38);
 }
 
 .placeholderHeading{
@@ -17,16 +23,9 @@
   line-height: 36px;
   color: rgba(28, 27, 31, 0.6);
 }
-.placeholderText{
-  margin-bottom: 1rem;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.25px;
-  color: rgba(28, 27, 31, 0.38);
-}
 
 .placeholderBtn{
+  margin-top: 2rem;
   padding: 13px 55px;
   color: #ffffff;
   background-color: #C8BFFF;

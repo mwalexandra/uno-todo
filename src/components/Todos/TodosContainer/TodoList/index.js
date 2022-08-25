@@ -1,6 +1,8 @@
 import TodoBox from './TodoBox'
 import style from './index.module.css'
 import { useSelector } from 'react-redux';
+import Placeholder from '../../../Placeholder';
+
 
 function TodoList() {
 
@@ -44,14 +46,17 @@ function TodoList() {
   return (
 
       <ul className={style.todoList}>
-          {
-            renderTodos.map(todo => {
-            return <TodoBox
-                      key={todo.id}
-                      todoId = {todo.id}
-                    />
-            })
-          }
+
+        { !renderTodos || renderTodos.length === 0 
+          ? <Placeholder name={'Tasks'}/>
+          : renderTodos.map(todo => {
+              return <TodoBox
+                    key={todo.id}
+                    todoId = {todo.id}
+                  />
+          })
+        }
+
         </ul>
 
   )

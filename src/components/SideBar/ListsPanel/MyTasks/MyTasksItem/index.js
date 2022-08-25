@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import {selectListId} from '../../../../../storage/interface/actionsCreator'
 import style from './index.module.css'
@@ -5,6 +6,8 @@ import style from './index.module.css'
 function MyTasksItem({list}){
   const dispatch = useDispatch();
   const listId = useSelector(state => state.interface.listId)
+
+  useEffect(() => {}, [listId])
 
   return (
     <li 

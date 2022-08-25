@@ -1,44 +1,32 @@
-import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
+import { SHOW_SETTINGS, CHANGE_MODE, SHOW_PANEL_TODO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB,
         SEARCH_STRING } from './actions';
 
-function showPanelTodo(show) {
+function showSettings (settingsShow) {
   return {
-    type: SHOW_PANEL_TODO,
+    type: SHOW_SETTINGS,
     payload: {
-      show,
+      settingsShow,
     }
   }  
 }
 
-function showChangeModal (changeModal) {
+function changeMode (mode) {
   return {
-    type: SHOW_CHANGE_MODAL,
+    type: CHANGE_MODE,
     payload: {
-      changeModal,
+      mode,
     }
-  } 
+  }  
 }
 
-function showConfirmModal (confirmModal) {
+function showPanelTodo(panelShow) {
   return {
-    type: SHOW_CONFIRM_MODAL,
+    type: SHOW_PANEL_TODO,
     payload: {
-      confirmModal,
+      panelShow,
     }
-  } 
-}
-
-function showModalInfo (name, btnText, action, inputValue){
-  return {
-    type: MODAL_INFO,
-    payload: {
-      name,
-      btnText,
-      action,
-      inputValue,
-    }
-  } 
+  }  
 }
 
 function selectTodoId(id) {
@@ -77,5 +65,6 @@ function setSearchString (searchString) {
   }
 }
 
-export {showPanelTodo, showChangeModal, showConfirmModal, showModalInfo,
-        selectTodoId, selectListId, setActiveTab, setSearchString}
+export { showSettings, changeMode, showPanelTodo, 
+        selectTodoId, selectListId, 
+        setActiveTab, setSearchString }

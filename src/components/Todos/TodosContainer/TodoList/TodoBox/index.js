@@ -11,7 +11,7 @@ function TodoBox({todoId}) {
 
 const dispatch = useDispatch();
 
-const isShownPanelTodo = useSelector(state => state.interface.show);
+const isShownPanelTodo = useSelector(state => state.interface.panelShow);
 const selectedTodoId = useSelector(state => state.interface.todoId);
 
   function editTodo() {

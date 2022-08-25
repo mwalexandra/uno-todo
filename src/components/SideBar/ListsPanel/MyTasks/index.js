@@ -5,8 +5,6 @@ import MyTasksItem from './MyTasksItem'
 function MyTasks(){
   const lists = useSelector(state => state.lists.content)
 
-
-  //TODO lists не рендарятся после добавления листа
   return (
       <ul className={style.myTasks}> 
         {

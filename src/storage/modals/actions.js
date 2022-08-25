@@ -1,0 +1,4 @@
+const SHOW_MODAL = 'SHOW_MODAL'
+const MODAL_INFO = 'MODAL_INFO'
+
+export { SHOW_MODAL, MODAL_INFO}

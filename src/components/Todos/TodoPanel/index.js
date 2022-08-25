@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 
 function TodoPanel(){
 
-  const isShownPanelTodo = useSelector(state => state.interface.show)
+  const isShownPanelTodo = useSelector(state => state.interface.panelShow)
 
   return (
     <section className={`${style.todoPanel} ${isShownPanelTodo ? style.isShown : ''}`}>

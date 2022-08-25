@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { showChangeModal, showConfirmModal, showModalInfo } from '../../../../storage/interface/actionsCreator'
-import Search from '../../../SideBar/Search';
+import { showModal, showModalInfo } from '../../../../storage/modals/actionsCreator'
 
 import style from './index.module.css'
 
@@ -24,12 +23,12 @@ function TodoListHeader (){
   function changeHeader(){
     console.log(header);
     dispatch(showModalInfo('Rename list', 'Rename', 'changeHeader', header))
-    dispatch(showChangeModal(true))
+    dispatch(showModal(true))
   }
 
   function deleteList(){
-    dispatch(showModalInfo('Are you sure?', 'Delete', 'deleteList', 'List will be permanently deleted'))
-    dispatch(showConfirmModal(true))
+    dispatch(showModalInfo('confirm', 'Are you sure?', 'Delete', 'deleteList', 'List will be permanently deleted'))
+    dispatch(showModal(true))
   }
 
   if(searchString) {

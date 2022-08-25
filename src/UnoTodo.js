@@ -1,42 +1,40 @@
 import SideBar from './components/SideBar';
 import Todos from './components/Todos';
 import Placeholder from './components/Placeholder'
-import ChangeModal from './components/Modals/ChangeModal';
-import ConfirmModal from './components/Modals/ConfirmModal';
+import Modals from './components/Modals';
+import UserSettings from './components/UserSettings'
 import './common-styles/reset.css';
 import { useSelector } from 'react-redux';
 
 function UnoTodo() {
 
   const lists = useSelector(state => state.lists.content)
-  const changeModal = useSelector(state => state.interface.changeModal)
-  const confirmModal = useSelector(state => state.interface.confirmModal)
+  const modalShow = useSelector(state => state.modals.modalShow)
+  const settingsShow = useSelector(state => state.interface.settingsShow)
 
   const main = {
     display: 'flex',
   }
-  // useMemo(()=>{console.log(lists)},[lists])
 
   return (
-    <div style={main}>
-      <SideBar />
-      
-      {
-        lists.length === 0
-        ? <Placeholder name={'list'}/>
-        : <Todos />
-      }
+    <>
+      <div style={main}>
+        <SideBar />
+        
+        {
+          lists.length === 0
+          ? <Placeholder name={'Lists'}/>
+          : <Todos />
+        }
 
+        {
+          modalShow ? <Modals /> : undefined
+        }
+      </div>
       {
-        changeModal ? <ChangeModal /> : undefined
+        settingsShow ? <UserSettings /> : undefined
       }
-
-      {
-        confirmModal ? <ConfirmModal /> : undefined
-      }
-       
-      
-    </div>
+  </>
   )
 }
 

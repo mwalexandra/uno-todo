@@ -8,16 +8,7 @@ import Placeholder from '../../Placeholder';
 
 function TodosContainer() {
 
-  const showPanelTodo = useSelector(state => state.interface.show);
-
-  const selectedListId = useSelector(
-    state => state.interface.listId
-  )
-
-  const todos = useSelector(
-    state => 
-      state.lists.content.find(list => list.id === selectedListId)?.todos
-  )
+  const showPanelTodo = useSelector(state => state.interface.panelShow);
 
   const tab = useSelector(state => state.interface.tab)
 
@@ -26,20 +17,15 @@ function TodosContainer() {
   return (
     <>
       <main className={`${style.todosContainer} ${showPanelTodo ? style.showPanel : ''}`}>
-
-      { 
-        !todos || todos.length === 0 
-        ? <Placeholder name={'task'}/>
-        : <section className={style.todosSection}>
-            <TodoListHeader />
-            {
-              tab === 'Importants' || searchString
-              ? undefined : <TabSwitcher /> 
-            }
-            <TodoList />
-            <AddTodo />
-          </section>
-      }
+      <section className={style.todosSection}>
+        <TodoListHeader />
+        {
+          tab === 'Importants' || searchString
+          ? undefined : <TabSwitcher /> 
+        }
+        <TodoList />
+        <AddTodo />
+      </section>
       </main>
     </>
   )

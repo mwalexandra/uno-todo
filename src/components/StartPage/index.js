@@ -1,12 +1,16 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import style from './index.module.css'
 
 
 function StartPage(){
+
+  const mode = useSelector(state => state.interface.settings.mode)
+  
   return(
     <section className={style.startPage}>
-      <div className={style.startSideBar}>
+      <div className={`${style.startSideBar} ${mode === 'light' ? style.light : style.dark}`}>
         <div className={style.logo}>
           {/* <img src="../../img/uno_platform_logo.png" alt="Logo" /> */}
         </div>

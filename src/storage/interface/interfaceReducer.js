@@ -1,22 +1,21 @@
 import { initialContentState as listsContent } from '../content/contentReducer';
-import { SHOW_PANEL_TODO, SHOW_CHANGE_MODAL, SHOW_CONFIRM_MODAL, MODAL_INFO,
-        SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB, SEARCH_STRING} from './actions';
+import { SHOW_SETTINGS, CHANGE_MODE, SHOW_PANEL_TODO,
+          SELECT_TODO_ID, SELECT_LIST_ID, 
+          SET_ACTIVE_TAB, SEARCH_STRING } from './actions';
 
 const lists = listsContent.content
 
 export const initialInterfaceState = {
-  show: false,
+  settingsShow: false,
+  settings: {
+    mode: 'light',
+    color: 'Purple',
+    language: 'English',
+  },
+  panelShow: false,
   todoId: lists[0]?.todos[0]?.id | null,
   listId: lists[0]?.id | null,
   tab: 'Todos',
-  changeModal: false,
-  confirmModal: false,
-  modal: {
-    name: '', // 'New list', 'Add a task', 'Rename list', 'Are you sure?'
-    action: '', // addList, deleteList, addTask, deleteTask, changeHeader
-    btnText: '', // '+ Create', '+ Add', 'Rename', 'Delete'
-    inputValue: '',
-  },
   searchString: '',
 };
 
@@ -24,34 +23,26 @@ function iterfaceReducer(state = initialInterfaceState, {type, payload}) {
 
   switch(type){
 
+    case SHOW_SETTINGS:
+      return {
+        ...state,
+        settingsShow: payload.settingsShow,
+    }
+
+    case CHANGE_MODE:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          mode: payload.mode,
+        }
+    }
+
     case SHOW_PANEL_TODO:
       return {
         ...state,
-        show: payload.show,
+        panelShow: payload.panelShow,
     }
-
-    case SHOW_CHANGE_MODAL: 
-      return {
-        ...state,
-        changeModal: payload.changeModal,
-      }
-
-    case SHOW_CONFIRM_MODAL: 
-      return {
-        ...state,
-        confirmModal: payload.confirmModal,
-    }  
-
-    case MODAL_INFO:
-      return {
-        ...state,
-        modal: {
-          name: payload.name,
-          action: payload.action,
-          btnText: payload.btnText,
-          inputValue: payload.inputValue,
-        }
-      }
 
     case SELECT_TODO_ID:
       return {

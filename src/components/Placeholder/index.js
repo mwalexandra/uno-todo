@@ -1,25 +1,26 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import style from './index.module.css'
-import {showChangeModal, showModalInfo} from '../../storage/interface/actionsCreator'
+import {showModal, showModalInfo} from '../../storage/modals/actionsCreator'
 
 
 function Placeholder({name}){
   const dispatch = useDispatch();
 
+  const tab = useSelector(state => state.interface.tab);
+
   function openModal(){
-    if(name === 'list'){
-      dispatch(showModalInfo('New list', ' + Create', 'addList', ''))
-    } else if(name === 'task'){
-      dispatch(showModalInfo ('Add Todo', '+ Add', 'todoAdd', ''))
+    if(name === 'Lists'){
+      dispatch(showModalInfo('change', 'New list', ' + Create', 'addList', ''))
+    } else if(name === 'Tasks'){
+      dispatch(showModalInfo ('change', 'Add Todo', '+ Add', 'todoAdd', ''))
     }
-    dispatch(showChangeModal(true))
+    dispatch(showModal(true))
   }
 
   return (
-    <div className={style.placeholderWrapper}>
+    <div className={`${style.placeholderWrapper} ${tab === 'Importants' ? style.placeholderImportants : style.placeholderTasks}`}>
       <div className={style.placeholder}>
         <h2 className={style.placeholderHeading}>{name} not found</h2>
-        <p className={style.placeholderText}>But you can add one</p>
         <button 
           className={style.placeholderBtn}
           onClick={() => openModal()}

@@ -1,7 +1,7 @@
 
 import style from './index.module.css'
 import { useDispatch } from 'react-redux';
-import {showChangeModal, showModalInfo} from '../../../storage/interface/actionsCreator'
+import {showModal, showModalInfo} from '../../../storage/modals/actionsCreator'
 
 
 function AddList(){
@@ -9,8 +9,8 @@ function AddList(){
   const dispatch = useDispatch();
 
   function showAddModal(){
-    dispatch(showModalInfo ('Add List', '+ Add', 'addList', ''))
-    dispatch(showChangeModal(true))
+    dispatch(showModalInfo ('change', 'Add List', '+ Add', 'addList', ''))
+    dispatch(showModal(true))
   }
 
   return (  

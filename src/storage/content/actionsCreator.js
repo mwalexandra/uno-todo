@@ -1,4 +1,4 @@
-import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_SELECTED, TODO_DELETE,
+import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_DELETE,
 				CHANGE_DATE, CHANGE_TITLE, CHANGE_NOTE,
 				ADD_LIST, DELETE_LIST, CHANGE_HEADER } from './actions';
 
@@ -27,17 +27,6 @@ function todoComplete(listId, todoId) {
 function todoImportant(listId, todoId) {
 	return {
 		type: TODO_IMPORTANT,
-		payload: {
-			listId,
-			todoId,
-		}
-	}
-}
-
-// TODO перенести в интерфейс
-function todoSelected(listId, todoId) { 
-	return {
-		type: TODO_SELECTED,
 		payload: {
 			listId,
 			todoId,
@@ -116,6 +105,6 @@ function deleteList(listId) {
 	}
 }
 
-export {todoAdd, todoComplete, todoImportant, todoSelected, todoDelete, 
+export {todoAdd, todoComplete, todoImportant, todoDelete, 
 				changeDate, changeTitle, changeNote,
 				addList, changeHeader, deleteList};
