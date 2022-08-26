@@ -7,7 +7,12 @@ function MyTasksItem({list}){
   const dispatch = useDispatch();
   const listId = useSelector(state => state.interface.listId)
 
-  useEffect(() => {}, [listId])
+  // TODO переделать
+  //useEffect(() => {}, [listId])
+
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])
+  const chevron = require(`../../../../../img/${theme.chevron}.svg`);
 
   return (
     <li 
@@ -17,7 +22,12 @@ function MyTasksItem({list}){
     >
       <span className={`${style.icon} ${style.listIcon}`}></span>
       <p>{list.header}</p>
-      <span className={`${style.icon} ${style.arrow}`}></span>
+      <span 
+        className={`${style.icon} ${style.arrow}`} 
+        style={{
+          backgroundImage: `url(${chevron})`
+        }}
+      ></span>
     </li>
   )
 }

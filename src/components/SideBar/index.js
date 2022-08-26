@@ -9,8 +9,16 @@ function SideBar() {
 
   const mode = useSelector(state => state.interface.settings.mode)
 
+  const theme = useSelector(state => state.interface.settings[mode])
+  console.log(theme);
+
   return (
-    <div className={`${style.sideBar} ${mode === 'light' ? style.light : style.dark}`}>
+    <div 
+      className={style.sideBar} 
+      style={{
+        backgroundColor: theme.appBackground,
+        color: theme.fontColor,
+      }}>
       <UserName />
       <Search />
       <ListsPanel />

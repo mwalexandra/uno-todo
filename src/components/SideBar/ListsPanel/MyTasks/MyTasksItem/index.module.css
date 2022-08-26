@@ -16,10 +16,10 @@
 .listIcon{
   background-image: url('../../../../../img/Icon.svg');
 }
+
 .arrow{
   margin-left: auto;
-  background-image: url('../../../../../img/chevron_right.svg');
-}
+} 
 
 .selected {
   background-color: rgba(89, 70, 210, 0.08);

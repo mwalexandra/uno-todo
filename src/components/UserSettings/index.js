@@ -49,12 +49,12 @@ function UserSettings (){
             <strong className={style.settingsHeading}>Mode</strong>
             <div className={style.settingsBtns}>
               <button 
-                className={`${style.settingsBtn} ${style.lightBtn} ${mode === 'light' ? style.activeSetting : ''}`}
-                onClick={() => dispatch(changeMode('light'))}
+                className={`${style.settingsBtn} ${style.lightBtn} ${mode === 'lightTheme' ? style.activeSetting : ''}`}
+                onClick={() => dispatch(changeMode('lightTheme'))}
               >Light</button>
               <button 
-                className={`${style.settingsBtn} ${style.darkBtn} ${mode === 'dark' ? style.activeSetting : ''}`}
-                onClick={() => dispatch(changeMode('dark'))}
+                className={`${style.settingsBtn} ${style.darkBtn} ${mode === 'darkTheme' ? style.activeSetting : ''}`}
+                onClick={() => dispatch(changeMode('darkTheme'))}
               >Dark</button>
             </div>
           </div>

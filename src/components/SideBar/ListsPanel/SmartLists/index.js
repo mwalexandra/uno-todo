@@ -6,6 +6,9 @@ function SmartLists(){
   const dispatch = useDispatch();
 
   const tab = useSelector(state => state.interface.tab);
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])
+  const chevron = require(`../../../../img/${theme.chevron}.svg`);
 
   return (
     <>
@@ -16,7 +19,12 @@ function SmartLists(){
         >
           <span className={`${style.icon} ${style.importantIcon}`}></span>
           <p>Important</p>
-          <span className={`${style.icon} ${style.arrow}`}></span>
+          <span 
+            className={`${style.icon} ${style.arrow}`}
+            style={{
+              backgroundImage: `url(${chevron})`
+            }}
+          ></span>
         </li>
         <li 
           className={`${style.smartListItem} ${tab === 'Todos' ? style.selected : ''}`}
@@ -24,7 +32,12 @@ function SmartLists(){
         >
           <span className={`${style.icon} ${style.tasksIcon}`}></span>
           <p>Tasks</p>
-          <span className={`${style.icon} ${style.arrow}`}></span>
+          <span 
+            className={`${style.icon} ${style.arrow}`}
+            style={{
+              backgroundImage: `url(${chevron})`
+            }}
+          ></span>
         </li>
       </ul>
     </>

@@ -30,7 +30,7 @@ function Modals () {
   const inputValue = useSelector(state => state.modals.modal.inputValue)
 
   const [ currentValue, setCurrentValue ] = useState(inputValue) 
-
+// TODO разделить логику на разные компоненты
   function modalAction(value){   // addList, todoAdd, changeHeader
     if(modal.action === 'changeHeader'){
       dispatch(changeHeader(listId, value)); 
@@ -45,9 +45,14 @@ function Modals () {
       dispatch(selectTodoId(null))
       dispatch(showPanelTodo(false))
     } else if (modal.action === 'deleteList') {
+      const deleteListIndex = lists.indexOf(lists.find(list => list.id === listId))
       dispatch(deleteList(listId));
-      if(lists){
-        dispatch(selectListId(lists[lists.length - 1].id))
+      if(lists.length > 1){
+        if(deleteListIndex !== 0) {
+          dispatch(selectListId(lists[deleteListIndex-1].id))
+        } else {
+          dispatch(selectListId(lists[1].id))
+        }
       } else {
         dispatch(selectListId(null))
       }
@@ -55,7 +60,7 @@ function Modals () {
     setCurrentValue('');
     dispatch(showModal(false));
   } 
-
+// фабрика для модальных окон
   function modalSwitcher(){
     switch(modal.type) {
       case 'confirm':

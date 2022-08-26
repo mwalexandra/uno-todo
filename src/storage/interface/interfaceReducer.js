@@ -8,7 +8,17 @@ const lists = listsContent.content
 export const initialInterfaceState = {
   settingsShow: false,
   settings: {
-    mode: 'light',
+    mode: 'lightTheme',
+    lightTheme: {
+      appBackground: '#fff', //listBackground, fontColor, buttonColor
+      fontColor:'#000',
+      chevron: 'light-chevron_right',
+    },
+    darkTheme: {
+      appBackground: '#000000',
+      fontColor:'#ffffff',
+      chevron: 'dark-chevron_right',
+    },
     color: 'Purple',
     language: 'English',
   },
