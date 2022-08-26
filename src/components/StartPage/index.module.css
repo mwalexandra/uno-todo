@@ -1,14 +1,5 @@
 .startPage {
   display: flex;
-  background-color: rgba(89, 70, 210, 0.08);
-}
-
-.light {
-  background-color: #ffffff;
-}
-
-.dark {
-  background-color: #201F24;
 }
 
 .startSideBar {
@@ -49,18 +40,15 @@
 
 .textBox p {
   margin-top: 16px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #5835E5;
 }
 
 .startedBtn {
   padding: 10px 0;
   width: 100%;
   line-height: 20px;
-  color: #fff;
-  background-color: #5835E5;
   border: none;
   border-radius: 20px;
   text-decoration: none;
