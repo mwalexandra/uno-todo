@@ -8,21 +8,27 @@ function StartPage(){
 
   const mode = useSelector(state => state.interface.settings.mode)
   const theme = useSelector(state => state.interface.settings[mode])
+  const logo = require(`../../img/${theme.logo}.png`);
   
   return(
     <section 
       className={style.startPage}
       style={{
-        backgroundColor: theme.primaryColorOpacity,
+        backgroundColor: theme.secondaryBackground,
       }}  
     >
       <div 
         className={style.startSideBar}
         style={{
-          backgroundColor: theme.onPrimaryColor,
+          backgroundColor: theme.primaryBackground,
         }}  
       >
-        <div className={style.logo}></div>
+        <div 
+          className={style.logo}
+          style={{
+            backgroundImage: `url(${logo})`
+          }}
+        ></div>
 
         <div className={style.textBox}>
           <h1

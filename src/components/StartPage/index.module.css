@@ -23,7 +23,7 @@
 .logo {
   width: 103px;
   height: 30px;
-  background: url('../../img/uno_platform_logo.png') no-repeat;
+  /* background: url('../../img/uno_platform_logo.png') no-repeat; */
   background-size: contain;
   background-position: center;
 }
