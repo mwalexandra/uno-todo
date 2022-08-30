@@ -1,12 +1,12 @@
 .todoPanel {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   right: -280px;
   top: 0;
   width: 280px;
   height: 100vh;
-  padding: 40px 20px;
-  background-color: #fff;
+  padding: 30px 20px;
   transition: right 500ms ease-in-out;
 }
 .isShown {

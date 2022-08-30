@@ -21,10 +21,23 @@ function TodoPanelDate(){
         ?.todos.find( todoItem => selectedTodoId === todoItem.id)?.date
   )
 
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])
+
   return (
-    <div className={style.todoPanelDate}>
+    <div 
+      className={`${style.todoPanelDate} ${mode !== 'lightTheme' ? style.dark : ''}`}
+      style={{
+          borderBottom: `1px solid ${theme.onSurfacePressedBrush}`
+        }}
+    >
       <input 
-        type='date' 
+        type='date'
+        className={style.todoPanelDateInput}
+        style={{
+          color: theme.onSurfaceMediumBrush,
+          backgroundColor: theme.surfaceColor,
+        }}
         value={date}
         onChange={(e) => dispatch(changeDate(selectedListId, selectedTodoId, e.target.value))}
         /> 

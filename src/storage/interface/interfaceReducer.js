@@ -34,6 +34,7 @@ export const initialInterfaceState = {
       taskListIcon: 'light-task_icon',
       searchIcon: 'light-search',
       userPic: 'light-name',
+      deleteIcon: 'light-delete',
     },
     darkTheme: {
       primaryColor: '#9373FF',
@@ -60,6 +61,7 @@ export const initialInterfaceState = {
       taskListIcon: 'dark-task_icon',
       searchIcon: 'dark-search',
       userPic: 'dark-name',
+      deleteIcon: 'dark-delete',
     },
     color: 'Purple',
     language: 'English',
