@@ -8,6 +8,9 @@ function UserSettings (){
   const dispatch = useDispatch()
   const mode = useSelector(state => state.interface.settings.mode)
 
+  const theme = useSelector(state => state.interface.settings[mode])
+  const userPic = require(`../../img/${theme.userPic}.svg`);
+
 
   return (
     <div className={`${style.modalWrapper}`}>
@@ -18,7 +21,12 @@ function UserSettings (){
         <h3 className={style.modalHeader}>Settings</h3>
 
         <div className={style.usernameWrapper}>
-          <div className={style.userpic}></div>
+          <div 
+            className={style.userpic}
+            style={{
+              backgroundImage: `url(${userPic})`
+            }}
+          ></div>
           <div className={style.descrWrapper}>
             <h3 className={style.userName}>Antonio Bonilla</h3>
             <p className={style.userEmail}>antonio.bonilla@horus.com.ua</p>

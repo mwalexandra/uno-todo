@@ -4,14 +4,11 @@ import AddTodo from './AddTodo'
 import TodoListHeader from './TodoListHeader'
 import TabSwitcher from './TabSwitcher'
 import { useSelector } from 'react-redux';
-import Placeholder from '../../Placeholder';
 
 function TodosContainer() {
 
   const showPanelTodo = useSelector(state => state.interface.panelShow);
-
   const tab = useSelector(state => state.interface.tab)
-
   const searchString = useSelector(state => state.interface.searchString)
 
   return (

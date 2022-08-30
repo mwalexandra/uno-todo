@@ -4,11 +4,23 @@ import TodoPanel from './TodoPanel'
 import { useSelector } from 'react-redux';
 
 function Todos() {
+
   const tab = useSelector(state => state.interface.tab);
 
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])
+  // const logo = require(`../../img/${theme.logo}.png`);
+  
   return (
     <>
-      <div className={`${style.todos} ${tab === 'Importants' ? style.importantTodos : ''}`}>
+      <div 
+        className={style.todos} 
+        style={
+          tab !== 'Importants' 
+          ? {backgroundColor: theme.primaryVariantLightColor}
+          : {backgroundColor: theme.errorColor}
+        }
+      >  
         <TodosContainer /> 
         <TodoPanel />
       </div>

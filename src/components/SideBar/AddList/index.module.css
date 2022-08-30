@@ -5,10 +5,11 @@
   width: 100%;
   font-size: larger;
   text-align: left;
-  color: #5946D2;
   border: none;
   border-radius: 20px;
-  background: url('../../../img/lila-plus.svg') no-repeat left 16px center;
+  background-color: transparent;
+  background-repeat: no-repeat; 
+  background-position: left center;
   background-size: 16px;
   border: none;
   cursor: pointer;

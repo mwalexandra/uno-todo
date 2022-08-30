@@ -1,7 +1,6 @@
 .smartLists {
   padding: 25px 0;
   list-style: none;
-  border-bottom: 1px solid rgba(28, 27, 31, 0.12);
 }
 .smartListItem{
   display: flex;
@@ -19,16 +18,7 @@
   background-size: cover;
   background-position: center;
 }
-.tasksIcon{
-  background-image: url('../../../../img/house_siding.svg');
-}
-.importantIcon{
-  background-image: url('../../../../img/important.svg');
-}
+
 .arrow{
   margin-left: auto;
-}
-
-.selected {
-  background-color: rgba(89, 70, 210, 0.08);
 }

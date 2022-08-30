@@ -13,14 +13,6 @@
   background-size: cover;
   background-position: center;
 }
-.listIcon{
-  background-image: url('../../../../../img/Icon.svg');
-}
-
 .arrow{
   margin-left: auto;
 } 
-
-.selected {
-  background-color: rgba(89, 70, 210, 0.08);
-}

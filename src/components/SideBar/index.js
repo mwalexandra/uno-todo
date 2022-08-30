@@ -8,16 +8,14 @@ import { useSelector } from 'react-redux'
 function SideBar() {
 
   const mode = useSelector(state => state.interface.settings.mode)
-
   const theme = useSelector(state => state.interface.settings[mode])
-  console.log(theme);
 
   return (
     <div 
       className={style.sideBar} 
       style={{
-        backgroundColor: theme.appBackground,
-        color: theme.fontColor,
+        backgroundColor: theme.surfaceColor,
+        color: theme.onSurfaceColor,
       }}>
       <UserName />
       <Search />

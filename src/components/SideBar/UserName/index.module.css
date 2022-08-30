@@ -5,7 +5,7 @@
 .userpic{
   width: 32px;
   height: 32px;
-  background: url('../../../img/name.svg') no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
 }
 .descrWrapper{
@@ -15,12 +15,10 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #1C1B1F;
 }
 .userEmail{
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
-  color: rgba(28, 27, 31, 0.6); 
 }
