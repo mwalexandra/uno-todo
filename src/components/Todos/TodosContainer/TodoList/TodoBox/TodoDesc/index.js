@@ -14,10 +14,21 @@ function TodoDesc({todoId}) {
     ).todos.find(todoItem => todoId === todoItem.id)
   )
 
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])
+
 	return (
     <div className={style.todoDescr}>
-      <h2>{todo.title}</h2>
-      <p>{todo.note} - {useShowDate(todo.date)}</p>
+      <h2
+        style={{
+          color: theme.onSurfaceColor,
+        }} 
+      >{todo.title}</h2>
+      <p
+        style={{
+          color:theme.onSurfaceMediumBrush,
+        }}
+      >{todo.note} - {useShowDate(todo.date)}</p>
     </div>
 	)
 }

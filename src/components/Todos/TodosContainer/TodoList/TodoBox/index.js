@@ -14,6 +14,9 @@ const dispatch = useDispatch();
 const isShownPanelTodo = useSelector(state => state.interface.panelShow);
 const selectedTodoId = useSelector(state => state.interface.todoId);
 
+const mode = useSelector(state => state.interface.settings.mode)
+const theme = useSelector(state => state.interface.settings[mode])
+
   function editTodo() {
     dispatch(selectTodoId(todoId))
 
@@ -26,7 +29,12 @@ const selectedTodoId = useSelector(state => state.interface.todoId);
 
   return (
     <li 
-      className={`${style.todoItem} ${todoId === selectedTodoId ? style.selected : ''}`}
+      className={style.todoItem} 
+      style={
+        todoId !== selectedTodoId 
+        ? {backgroundColor: theme.surfaceColor}
+        : {backgroundColor: theme.onSurfaceLowBrush}
+        }
       onClick={editTodo}
     >
 

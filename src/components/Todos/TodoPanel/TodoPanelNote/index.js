@@ -13,11 +13,23 @@ function TodoPanelNote(){
   const note = useSelector(state => 
                               state.lists.content.find(list => list.id === selectedListId)
                               ?.todos.find(todo => todo.id === todoId)?.note)
+
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])                                
   
   return (
-    <div className={style.todoPanelNote}>
+    <div 
+      className={style.todoPanelNote}
+      style={{
+        borderBottom: `1px solid ${theme.onSurfacePressedBrush}`
+      }}
+    >
       <textarea  
         className={style.todoPanelTextarea}
+        style={{
+          color: theme.onSurfaceMediumBrush,
+          backgroundColor: theme.surfaceColor
+        }}
         placeholder='Add Note'
         onChange={(e)=> dispatch(changeNote(selectedListId, todoId, e.target.value))}
         value={note}

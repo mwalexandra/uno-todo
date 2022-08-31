@@ -2,7 +2,7 @@ import TodoBox from './TodoBox'
 import style from './index.module.css'
 import { useSelector } from 'react-redux';
 import Placeholder from '../../../Placeholder';
-
+import TabSwitcher from '../TabSwitcher'
 
 function TodoList() {
 
@@ -43,23 +43,38 @@ function TodoList() {
     }
   }
 
-  return (
-
+ if(!renderTodos || renderTodos.length === 0){
+  return <Placeholder name={'Tasks'}/>
+ } else {
+  if (tab === 'Importants' || searchString){
+    return (
       <ul className={style.todoList}>
-
-        { !renderTodos || renderTodos.length === 0 
-          ? <Placeholder name={'Tasks'}/>
-          : renderTodos.map(todo => {
-              return <TodoBox
+        { renderTodos.map(todo => {
+          return <TodoBox
                     key={todo.id}
                     todoId = {todo.id}
                   />
           })
         }
-
-        </ul>
-
-  )
+      </ul> 
+    )
+  } else {
+    return (
+      <>
+        <TabSwitcher />
+        <ul className={style.todoList}>
+          { renderTodos.map(todo => {
+            return <TodoBox
+                      key={todo.id}
+                      todoId = {todo.id}
+                    />
+            })
+          }
+        </ul> 
+      </>
+    )
+  }
+ }
 }
 
 export default TodoList;

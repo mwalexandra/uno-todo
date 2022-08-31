@@ -1,6 +1,7 @@
 .placeholderWrapper{
+  align-self: stretch;
   display: flex;
-  height: 60vh;
+  margin-top: 5rem;
   width: 100%;
 }
 
@@ -8,27 +9,12 @@
   margin: auto;
 }
 
-.placeholderImportants {
-  color: rgba(255, 255, 255, 1);
-  background: #F85977;
-}
-
-.placeholderTasks {
-  color: rgba(28, 27, 31, 0.38);
-}
-
 .placeholderHeading{
   font-weight: 400;
   font-size: 28px;
   line-height: 36px;
-  color: rgba(28, 27, 31, 0.6);
 }
 
-.placeholderBtn{
+.placeholderText {
   margin-top: 2rem;
-  padding: 13px 55px;
-  color: #ffffff;
-  background-color: #C8BFFF;
-  border: none;
-  border-radius: 20px;
 }

@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import style from './index.module.css'
 import {todoComplete} from '../../../../../../storage/content/actionsCreator.js'
 
 function TodoCompleted({todoId}) {
@@ -28,12 +27,3 @@ function TodoCompleted({todoId}) {
 }
 
 export default TodoCompleted;
-
-
-    // <input 
-    //     type='checkbox'
-    //     onClick = {(e) => e.stopPropagation()}
-    //     onChange = {() => setIsCompleted(!isCompleted)}
-    //     checked={isCompleted}
-    //     value={isCompleted}
-    //   />

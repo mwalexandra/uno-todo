@@ -14,6 +14,7 @@ function UnoTodo() {
 
   const main = {
     display: 'flex',
+    height: '100vh',
   }
 
   return (

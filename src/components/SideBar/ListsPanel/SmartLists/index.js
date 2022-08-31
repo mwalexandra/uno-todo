@@ -12,7 +12,7 @@ function SmartLists(){
 
   const chevron = require(`../../../../img/${theme.chevron}.svg`);
   const houseIcon = require(`../../../../img/${theme.houseIcon}.svg`);
-  const importantIcon = require(`../../../../img/${theme.importantIcon}.svg`);
+  const importantIcon = require(`../../../../img/${theme.activeImportantIcon}.svg`);
 
   return (
     <>

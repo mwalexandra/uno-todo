@@ -8,6 +8,9 @@ function Placeholder({name}){
 
   const tab = useSelector(state => state.interface.tab);
 
+  const mode = useSelector(state => state.interface.settings.mode)
+  const theme = useSelector(state => state.interface.settings[mode])
+
   function openModal(){
     if(name === 'Lists'){
       dispatch(showModalInfo('change', 'New list', ' + Create', 'addList', ''))
@@ -18,13 +21,43 @@ function Placeholder({name}){
   }
 
   return (
-    <div className={`${style.placeholderWrapper} ${tab === 'Importants' ? style.placeholderImportants : style.placeholderTasks}`}>
+    <div 
+      className={style.placeholderWrapper} 
+      style={
+        tab !== 'Importants' 
+        ? {
+          backgroundColor: theme.primaryVariantLightColor
+        } 
+        : {
+          backgroundColor: theme.errorColor
+        }
+      }
+    >
       <div className={style.placeholder}>
-        <h2 className={style.placeholderHeading}>{name} not found</h2>
-        <button 
-          className={style.placeholderBtn}
-          onClick={() => openModal()}
-        >Add {name}</button>
+        <h2 
+          className={style.placeholderHeading}
+          style={
+            tab !== 'Importants' 
+            ? {
+              color: theme.onSurfaceMediumBrush     
+            } 
+            : {
+              color: theme.onErrorColor
+            }
+          }
+        >{name} not found</h2>
+        <p
+          className={style.placeholderText}
+          style={
+            tab !== 'Importants' 
+            ? {
+              color: theme.onSurfaceMediumBrush     
+            } 
+            : {
+              color: theme.onErrorColor
+            }
+          }
+        >Try to add something ...</p>
       </div>  
     </div>
   )

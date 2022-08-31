@@ -12,23 +12,17 @@
   margin: auto;
   padding: 24px;
   width: 500px;
-  background-color: #ffffff;
   border-radius: 28px;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
-}
-
-.darkTheme .modal {
-  background-color: #160067;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
 
 .modalHeader {
   display: inline-block;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 30px;
   font-weight: 400;
   font-size: 22px;
   line-height: 28px;
-  color: #1C1B1F;
 }
 
 .usernameWrapper{
@@ -37,7 +31,6 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(28, 27, 31, 0.38);
 }
 .userpic{
   width: 60px;
@@ -53,35 +46,29 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #1C1B1F;
 }
 .userEmail{
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
-  color: rgba(28, 27, 31, 0.6); 
 }
 
 .logoutBtn {
-  color: #F85977;
   background-color: transparent;
   border: none;
 }
 
 .generalSettingsWrapper {
   padding-top: 1.5rem ;
-  border-bottom: 1px solid rgba(28, 27, 31, 0.38);
 }
 
-.generalSettingsHeading,
-.aboutSettingsHeading {
+h4 {
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.1px;
-  color: #5946D2;
 }
 
 .settingsWrapper {
@@ -93,7 +80,6 @@
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
-  color: #1C1B1F;
 }
 .settingsBtns{
   display: flex;
@@ -102,13 +88,9 @@
 }
 .settingsBtn{
   padding: 6px 16px;
-  color: #A5A0AC;
   font-size: 14px;
-  background-color: transparent;
   border-radius: 8px;
-  border: 1px solid #79747E;
 }
-
 .lightBtn,
 .darkBtn {
   padding-left: 25px;
@@ -116,37 +98,23 @@
   background-position: 5px center;
   background-size: 20%;
 }
-
-.lightBtn {
-  background-image: url('../../img/sun.svg');
-}
-
-.darkBtn {
-  background-image: url('../../img/moon.svg');
-}
-
 .generalSettingsWrapper p {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
   color: rgba(28, 27, 31, 0.38);
 }
-
 .aboutSettingsWrapper {
   margin: 1rem 0;
 }
-
 .versionNumber {
   margin-left: 2rem;
-  color: #5946D2;
 }
-
 .btnWrapper{
   display: flex;
   justify-content: flex-end;
   gap: 22px;
 }
-
 .btnWrapper button {
   padding: 10px 24px;
   font-weight: 500;
