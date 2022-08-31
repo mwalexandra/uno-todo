@@ -3,6 +3,7 @@ import style from './index.module.css'
 import { changeMode } from '../../storage/interface/actionsCreator'
 import { showSettings } from '../../storage/interface/actionsCreator'
 import Btn from './Btn'
+import { useState } from 'react'
 
 function UserSettings (){
 
@@ -10,8 +11,9 @@ function UserSettings (){
   const mode = useSelector(state => state.interface.settings.mode)
   const theme = useSelector(state => state.interface.settings[mode])
 
-  const userPic = require(`../../img/${theme.userPic}.svg`);
+  const [currentMode, setCurrentMode] = useState(mode)
 
+  const userPic = require(`../../img/${theme.userPic}.svg`);
 
   return (
     <div className={`${style.modalWrapper}`}>
@@ -85,8 +87,8 @@ function UserSettings (){
               style={{ color: theme.onSurfaceColor }}
             >Mode</strong>
             <div className={style.settingsBtns}>
-              <Btn settingsName={'mode'} btnName={'Light'} />
-              <Btn settingsName={'mode'} btnName={'Dark'} />
+              <Btn settingsName={'mode'} btnName={'Light'} currentMode={currentMode} setCurrentMode={setCurrentMode} />
+              <Btn settingsName={'mode'} btnName={'Dark'} currentMode={currentMode} setCurrentMode={setCurrentMode} />
             </div>
           </div>
         </div> 
@@ -113,6 +115,7 @@ function UserSettings (){
           >Cancel</button>
           <button 
             className={style.saveBtn}
+            onClick={() => dispatch(changeMode(currentMode))}
           >Save</button>
         </div>
       </div>

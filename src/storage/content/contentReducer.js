@@ -180,7 +180,6 @@ function contentReducer(state = initialContentState, {type, payload}) {
           
 //lists
       case ADD_LIST: 
-      console.log(state);
         return {
           ...state,
           content: [...state.content, {

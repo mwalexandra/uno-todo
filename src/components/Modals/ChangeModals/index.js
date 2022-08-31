@@ -28,29 +28,38 @@ function ChangeModals () {
     dispatch(showModal(false));
   } 
   return (
-    <div className={style.modalWrapper}>
-      <div className={style.modal}>
-        <h3 className={style.modalHeader}>{modal.name}</h3>
-        <input
-            type='text'
-            className={style.modalInput}
-            placeholder={modal.name}
-            value={currentValue}
-            onChange={(e) => setCurrentValue(e.target.value)}
-          />
-        <div className={style.btnWrapper}>
-          <button 
-            className={style.cancelBtn}
-            onClick={() => dispatch(showModal(false))}
-          >Cancel</button>
-          <button 
-            disabled={!currentValue}
-            className={style.addBtn}
-            onClick={() => modalAction(currentValue)}  
-          >{modal.btnText}</button>
-        </div>
+    <>
+      <input
+          type='text'
+          className={`${style.modalInput} ${mode === 'Light' ? style.light : style.dark}`}
+          style={{
+            backgroundColor: theme.surfaceVariantColor,
+            color: theme.onSurfaceColor,
+            borderBottom: `1px solid ${theme.onSurfaceLowBrush}`
+          }}
+          placeholder={modal.name}
+          value={currentValue}
+          onChange={(e) => setCurrentValue(e.target.value)}
+        />
+      <div className={style.btnWrapper}>
+        <button
+          className={style.cancelBtn}
+          style={{
+            color: theme.primaryColor,
+          }}
+          onClick={() => dispatch(showModal(false))}
+        >Cancel</button>
+        <button 
+          className={style.addBtn}
+          disabled={!currentValue}
+          style={{
+            backgroundColor: theme.primaryColor,
+            color: theme.onPrimaryColor,
+          }}
+          onClick={() => modalAction(currentValue)}  
+        >{modal.btnText}</button>
       </div>
-    </div>
+    </>
   )
 }
 

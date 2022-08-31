@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import style from './index.module.css';
 import { changeMode } from '../../../storage/interface/actionsCreator'
+import { useState } from "react";
 
 
 
-function Btn({settingsName, btnName}){
+function Btn(props){
   const dispatch = useDispatch()
 
   const mode = useSelector(state => state.interface.settings.mode)
@@ -15,14 +16,13 @@ function Btn({settingsName, btnName}){
   const sunIcon = require(`../../../img/${theme.sunIcon}.svg`);
   const moonIcon = require(`../../../img/${theme.moonIcon}.svg`);
 
-
-  switch(settingsName) {
+  switch(props.settingsName) {
     case 'color':
       return (
           <button 
             className={style.settingsBtn} 
             style={
-              color !== btnName 
+              color !== props.btnName 
               ? {
                 color: theme.onSurfaceVariantColor,
                 border: `1px solid ${theme.outline}`,
@@ -33,7 +33,7 @@ function Btn({settingsName, btnName}){
                 border: `1px solid ${theme.secondaryContainerColor}`,
               }
             }
-          >{btnName}</button>
+          >{props.btnName}</button>
       )
 
     case 'language':
@@ -41,7 +41,7 @@ function Btn({settingsName, btnName}){
         <button 
           className={style.settingsBtn} 
           style={
-            language !== btnName 
+            language !== props.btnName 
             ? {
               color: theme.onSurfaceVariantColor,
               border: `1px solid ${theme.outline}`,
@@ -52,7 +52,7 @@ function Btn({settingsName, btnName}){
               border: `1px solid ${theme.secondaryContainerColor}`,
             }
           }
-        >{btnName}</button>
+        >{props.btnName}</button>
     )
 
     case 'mode':
@@ -60,7 +60,7 @@ function Btn({settingsName, btnName}){
           <button 
             className={`${style.settingsBtn} ${style.modeBtn}`}
             style={
-              mode !== btnName 
+              props.currentMode !== props.btnName 
               ? {
                 color: theme.onSurfaceVariantColor,
                 border: `1px solid ${theme.outline}`,
@@ -72,17 +72,17 @@ function Btn({settingsName, btnName}){
               }
             }
             // TODO переделать, changeMode только при клике на кнопке Save
-            onClick={() => dispatch(changeMode(btnName))} 
+            onClick={() => props.setCurrentMode(props.btnName)} 
           >
             <span
               className={style.iconSpan} 
               style={
-                btnName === 'Light'
+                props.btnName === 'Light'
                 ? {backgroundImage: `url(${sunIcon})`}
                 : {backgroundImage: `url(${moonIcon})`}
               }
             ></span>
-            {btnName}
+            {props.btnName}
           </button>
       )
 

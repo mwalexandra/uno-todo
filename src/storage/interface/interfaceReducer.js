@@ -13,12 +13,13 @@ export const initialInterfaceState = {
     Light: {
       primaryColor: '#5946D2',
       onPrimaryColor: '#FFFFFF',
-      onPrimaryContainerColor: '160067',
+      onPrimaryContainerColor: '#160067',
       primaryBackground: '#FFFFFF',
       primaryVariantLightColor: '#B0A2F2',
       primarySelected: 'rgba(89, 70, 210, 0.08)',
       primaryInverseColor: '#C8BFFF',
       surfaceColor: '#FFFFFF',
+      surfaceVariantColor: '#FAF9FB',
       secondaryBackground: 'rgba(89, 70, 210, 0.08)',
       secondaryContainerColor: '#E5DFF9',
       onSurfacePressedBrush: 'rgba(28, 27, 31, 0.12)',
@@ -32,7 +33,6 @@ export const initialInterfaceState = {
       errorColor: '#F85977',
       onErrorColor: '#ffffff',
       outline: '#79747E',
-
       // images
       chevron: 'light-chevron_right',
       logo: 'light-logo',
@@ -58,6 +58,7 @@ export const initialInterfaceState = {
       primarySelected: 'rgba(200, 191, 255, 0.08)',
       primaryVariantLightColor: '#544794',
       surfaceColor: '#201F24',
+      surfaceVariantColor: '#49454F',
       secondaryBackground: 'rgba(37, 36, 41, 0.9)',
       secondaryContainerColor: '#474459',
       onSurfacePressedBrush: 'rgba(230, 225, 229, 0.12)',
@@ -71,7 +72,6 @@ export const initialInterfaceState = {
       errorColor: '#F85977',
       onErrorColor: '#ffffff',
       outline: '#79747E',
-
       // images
       chevron: 'dark-chevron_right',
       logo: 'dark-logo',

@@ -21,7 +21,7 @@ function TodoListHeader (){
   const theme = useSelector(state => state.interface.settings[mode]) 
 
   function changeHeader(){
-    dispatch(showModalInfo('Rename list', 'Rename', 'changeHeader', header))
+    dispatch(showModalInfo('change', 'Rename', 'Rename', 'changeHeader', header))
     dispatch(showModal(true))
   }
 

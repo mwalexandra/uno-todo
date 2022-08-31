@@ -47,22 +47,29 @@ function ConfirmModals(){
   } 
 
     return (
-      <div className={style.modalWrapper}>
-        <div className={style.modal}>
-          <h3 className={style.modalHeader}>{modal.name}</h3>
-          <p className={style.modalText}>{modal.inputValue}</p>
-          <div className={style.btnWrapper}>
-            <button 
-              className={style.cancelBtn}
-              onClick={() => dispatch(showModal(false))}
-            >Cancel</button>
-            <button 
-              className={style.addBtn}
-              onClick={() => modalAction()}  
-            >{modal.btnText}</button>
-          </div>
+      <>
+        <p 
+          className={style.modalText}
+          style={{ color: theme.onSurfaceLowBrush }}
+        >{modal.inputValue}</p>
+        <div className={style.btnWrapper}>
+          <button 
+            style={{
+              color: theme.primaryColor,
+              backgroundColor: 'transparent',
+            }}
+            onClick={() => dispatch(showModal(false))}
+          >Cancel</button>
+          <button 
+            className={style.addBtn}
+            style={{
+              backgroundColor: theme.errorColor,
+              color: theme.onPrimaryColor,
+            }}
+            onClick={() => modalAction()}  
+          >{modal.btnText}</button>
         </div>
-      </div>
+      </>
   )
     
 }
