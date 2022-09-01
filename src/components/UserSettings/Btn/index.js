@@ -71,7 +71,6 @@ function Btn(props){
                 border: `1px solid ${theme.secondaryContainerColor}`,
               }
             }
-            // TODO переделать, changeMode только при клике на кнопке Save
             onClick={() => props.setCurrentMode(props.btnName)} 
           >
             <span
