@@ -87,8 +87,18 @@ function UserSettings (){
               style={{ color: theme.onSurfaceColor }}
             >Mode</strong>
             <div className={style.settingsBtns}>
-              <Btn settingsName={'mode'} btnName={'Light'} currentMode={currentMode} setCurrentMode={setCurrentMode} />
-              <Btn settingsName={'mode'} btnName={'Dark'} currentMode={currentMode} setCurrentMode={setCurrentMode} />
+              <Btn 
+                settingsName={'mode'} 
+                btnName={'Light'} 
+                currentMode={currentMode} 
+                setCurrentMode={setCurrentMode} 
+              />
+              <Btn 
+                settingsName={'mode'} 
+                btnName={'Dark'} 
+                currentMode={currentMode} 
+                setCurrentMode={setCurrentMode} 
+              />
             </div>
           </div>
         </div> 

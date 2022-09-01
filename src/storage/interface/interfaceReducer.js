@@ -8,8 +8,7 @@ const lists = listsContent.content
 export const initialInterfaceState = {
   settingsShow: false,
   settings: {
-    // mode: 'Light',
-    mode: 'Dark',
+    mode: 'Light',
     Light: {
       primaryColor: '#5946D2',
       onPrimaryColor: '#FFFFFF',

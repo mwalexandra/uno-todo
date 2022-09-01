@@ -11,7 +11,7 @@
 .modal {
   margin: auto;
   padding: 24px;
-  width: 500px;
+  width: 30rem;
   border-radius: 28px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
@@ -21,7 +21,7 @@
   margin-bottom: 10px;
   margin-left: 30px;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 28px;
 }
 
@@ -29,8 +29,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem 0;
+  gap: .5rem;
+  padding: .5rem 0;
 }
 .userpic{
   width: 60px;
@@ -53,18 +53,15 @@
   line-height: 16px;
   letter-spacing: 0.4px;
 }
-
 .logoutBtn {
   background-color: transparent;
   border: none;
 }
-
 .generalSettingsWrapper {
-  padding-top: 1.5rem ;
+  padding-top: 1rem ;
 }
-
 h4 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;

@@ -1,12 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import style from './index.module.css';
-import { changeMode } from '../../../storage/interface/actionsCreator'
-import { useState } from "react";
 
 
 
 function Btn(props){
-  const dispatch = useDispatch()
 
   const mode = useSelector(state => state.interface.settings.mode)
   const theme = useSelector(state => state.interface.settings[mode])
