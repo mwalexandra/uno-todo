@@ -6,24 +6,19 @@ import TabSwitcher from '../TabSwitcher'
 
 function TodoList() {
 
-  const selectedListId = useSelector(
-    state => state.interface.listId
-  )
+  const selectedListId = useSelector(state => state.interface.listId)
 
-  const todos = useSelector(
-    state => 
+  const todos = useSelector(state => 
       state.lists.content.find(list => list.id === selectedListId)?.todos
   )
 
   const tab = useSelector(state => state.interface.tab);
 
-  const completedTodos = useSelector(
-    state => 
+  const completedTodos = useSelector(state => 
       state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.completed)
   )
 
-  const importantsTodos = useSelector(
-    state => 
+  const importantsTodos = useSelector(state => 
       state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.important)
   )
 
@@ -43,7 +38,7 @@ function TodoList() {
     }
   }
 
- if(!renderTodos || renderTodos.length === 0){
+ if(!renderTodos || renderTodos.length === 0){  
   return <Placeholder name={'Tasks'}/>
  } else {
   if (tab === 'Importants' || searchString){

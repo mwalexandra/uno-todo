@@ -10,7 +10,7 @@
 
 .modal {
   margin: auto;
-  padding: 24px;
+  padding: 1.5rem;
   width: 30rem;
   border-radius: 28px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
@@ -18,11 +18,10 @@
 
 .modalHeader {
   display: inline-block;
-  margin-bottom: 10px;
-  margin-left: 30px;
+  margin-bottom: .8rem;
+  margin-left: 2rem;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.4rem;
 }
 
 .usernameWrapper{
@@ -33,8 +32,8 @@
   padding: .5rem 0;
 }
 .userpic{
-  width: 60px;
-  height: 60px;
+  width: 3rem;
+  height: 3rem;
   background-repeat: no-repeat; 
   background-position: center;
   background-size: contain;
@@ -44,13 +43,11 @@
 }
 .userName{
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1rem;
 }
 .userEmail{
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: .8rem;
   letter-spacing: 0.4px;
 }
 .logoutBtn {
@@ -61,21 +58,19 @@
   padding-top: 1rem ;
 }
 h4 {
-  margin-bottom: 10px;
+  margin-bottom: .8rem;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: .9rem;
   letter-spacing: 0.1px;
 }
 
 .settingsWrapper {
-  margin-bottom: 20px;
+  margin-bottom: .8rem;
 }
 .settingsHeading {
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: .8rem;
   letter-spacing: 0.4px;
 }
 .settingsBtns{
