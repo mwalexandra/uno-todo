@@ -14,8 +14,8 @@ function TodoDesc({todoId}) {
     ).todos.find(todoItem => todoId === todoItem.id)
   )
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
 
 	return (
     <div className={style.todoDescr}>

@@ -6,8 +6,8 @@ import style from './index.module.css'
 
 function StartPage(){
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const logo = require(`../../img/${theme.logo}.png`);
   
   return(

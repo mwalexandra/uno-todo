@@ -7,8 +7,8 @@ function MyTasksItem({list}){
   const dispatch = useDispatch();
   const listId = useSelector(state => state.interface.listId)
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const chevron = require(`../../../../../img/${theme.chevron}.svg`);
   const taskListIcon = require(`../../../../../img/${theme.taskListIcon}.svg`);
 

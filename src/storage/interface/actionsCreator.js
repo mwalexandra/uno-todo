@@ -1,24 +1,7 @@
-import { SHOW_SETTINGS, CHANGE_MODE, SHOW_PANEL_TODO,
+import { SHOW_PANEL_TODO,
         SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB,
         SEARCH_STRING } from './actions';
 
-function showSettings (settingsShow) {
-  return {
-    type: SHOW_SETTINGS,
-    payload: {
-      settingsShow,
-    }
-  }  
-}
-
-function changeMode (mode) {
-  return {
-    type: CHANGE_MODE,
-    payload: {
-      mode,
-    }
-  }  
-}
 
 function showPanelTodo(panelShow) {
   return {
@@ -65,6 +48,6 @@ function setSearchString (searchString) {
   }
 }
 
-export { showSettings, changeMode, showPanelTodo, 
+export { showPanelTodo, 
         selectTodoId, selectListId, 
         setActiveTab, setSearchString }

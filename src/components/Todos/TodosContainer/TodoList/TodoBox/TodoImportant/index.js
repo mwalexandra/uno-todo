@@ -21,8 +21,8 @@ function TodoImportant({todoId}) {
         ?.todos.find( todoItem => todoId === todoItem.id)?.important
   )
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const importantIcon = require(`../../../../../../img/${theme.importantIcon}.svg`);
   const activeImportantIcon = require(`../../../../../../img/${theme.activeImportantIcon}.svg`);
 

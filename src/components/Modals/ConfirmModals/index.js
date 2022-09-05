@@ -12,8 +12,8 @@ function ConfirmModals(){
       
   const dispatch = useDispatch(),
         modal = useSelector(state => state.modals.modal),
-        mode = useSelector(state => state.interface.settings.mode),
-        theme = useSelector(state => state.interface.settings[mode]),
+        mode = useSelector(state => state.userSettings.settings.mode),
+        theme = useSelector(state => state.userSettings.settings[mode]),
         tab = useSelector(state => state.interface.tab),
         lists = useSelector(state => state.lists.content),
         todos = useSelector(state => state.lists.content.find(list => list.id === listId)?.todos)

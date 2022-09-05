@@ -7,8 +7,8 @@ function Todos() {
 
   const tab = useSelector(state => state.interface.tab);
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   // const logo = require(`../../img/${theme.logo}.png`);
   
   return (

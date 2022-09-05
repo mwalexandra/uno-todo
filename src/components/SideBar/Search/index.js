@@ -7,8 +7,8 @@ function Search() {
   const dispatch = useDispatch()
   const searchString = useSelector(state => state.interface.searchString)
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const searchIcon = require(`../../../img/${theme.searchIcon}.svg`);
 
   return (

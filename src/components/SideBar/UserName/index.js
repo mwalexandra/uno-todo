@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './index.module.css'
-import { showSettings } from '../../../storage/interface/actionsCreator'
+import { showSettings } from '../../../storage/userSettings/actionsCreator'
 
 function UserName() {
 
   const dispatch = useDispatch()
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const userPic = require(`../../../img/${theme.userPic}.svg`);
 
 

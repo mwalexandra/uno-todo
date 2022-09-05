@@ -15,8 +15,8 @@ function TodoPanelDelete(){
                                         .content.find(list => list.id === selectedListId)
                                         ?.todos.find(todo => todo.id === todoId)?.createDate)
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const chevron = require(`../../../../img/${theme.chevron}.svg`);
   const deleteIcon = require(`../../../../img/${theme.deleteIcon}.svg`);
   

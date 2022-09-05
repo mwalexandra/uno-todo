@@ -6,8 +6,8 @@ import {showModal, showModalInfo} from '../../../../storage/modals/actionsCreato
 function AddTodo(){
 
   const dispatch = useDispatch();
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])  
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])  
 
   function showAddModal(){
     dispatch(showModalInfo ('change', 'Add Todo', '+ Add', 'todoAdd', ''))

@@ -7,8 +7,8 @@ function SmartLists(){
 
   const tab = useSelector(state => state.interface.tab);
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
 
   const chevron = require(`../../../../img/${theme.chevron}.svg`);
   const houseIcon = require(`../../../../img/${theme.houseIcon}.svg`);

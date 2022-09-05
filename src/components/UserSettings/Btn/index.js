@@ -5,10 +5,10 @@ import style from './index.module.css';
 
 function Btn(props){
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
-  const color = useSelector(state => state.interface.settings.color)
-  const language = useSelector(state => state.interface.settings.language)
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
+  const color = useSelector(state => state.userSettings.settings.color)
+  const language = useSelector(state => state.userSettings.settings.language)
 
   const sunIcon = require(`../../../img/${theme.sunIcon}.svg`);
   const moonIcon = require(`../../../img/${theme.moonIcon}.svg`);

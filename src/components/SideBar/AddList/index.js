@@ -8,8 +8,8 @@ function AddList(){
 
   const dispatch = useDispatch();
 
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
   const lilaPlus = require(`../../../img/${theme.lilaPlus}.svg`);
 
   function showAddModal(){

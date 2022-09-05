@@ -7,8 +7,8 @@ import style from './index.module.css'
 function Modals () {
 
   const modal = useSelector(state => state.modals.modal) ,
-        mode = useSelector(state => state.interface.settings.mode),
-        theme = useSelector(state => state.interface.settings[mode])
+        mode = useSelector(state => state.userSettings.settings.mode),
+        theme = useSelector(state => state.userSettings.settings[mode])
         
   const modalComponent = () => {
     switch(modal.type) {

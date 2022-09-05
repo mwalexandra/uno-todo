@@ -10,7 +10,7 @@ function UnoTodo() {
 
   const lists = useSelector(state => state.lists.content)
   const modalShow = useSelector(state => state.modals.modalShow)
-  const settingsShow = useSelector(state => state.interface.settingsShow)
+  const settingsShow = useSelector(state => state.userSettings.settingsShow)
 
   const main = {
     display: 'flex',

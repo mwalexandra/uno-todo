@@ -14,8 +14,8 @@ const dispatch = useDispatch();
 const isShownPanelTodo = useSelector(state => state.interface.panelShow);
 const selectedTodoId = useSelector(state => state.interface.todoId);
 
-const mode = useSelector(state => state.interface.settings.mode)
-const theme = useSelector(state => state.interface.settings[mode])
+const mode = useSelector(state => state.userSettings.settings.mode)
+const theme = useSelector(state => state.userSettings.settings[mode])
 
   function editTodo() {
     dispatch(selectTodoId(todoId))

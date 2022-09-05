@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux'
 import style from './index.module.css'
-import { changeMode } from '../../storage/interface/actionsCreator'
-import { showSettings } from '../../storage/interface/actionsCreator'
+import { changeMode } from '../../storage/userSettings/actionsCreator'
+import { showSettings } from '../../storage/userSettings/actionsCreator'
 import Btn from './Btn'
 import { useState } from 'react'
 
 function UserSettings (){
 
   const dispatch = useDispatch()
-  const mode = useSelector(state => state.interface.settings.mode)
-  const theme = useSelector(state => state.interface.settings[mode])
+  const mode = useSelector(state => state.userSettings.settings.mode)
+  const theme = useSelector(state => state.userSettings.settings[mode])
 
   const [currentMode, setCurrentMode] = useState(mode)
 
