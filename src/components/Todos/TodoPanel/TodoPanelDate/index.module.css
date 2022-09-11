@@ -3,20 +3,19 @@
   padding: 15px 0;
 }
 
-.todoPanelDate::before{
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 22px;
-  height: 22px;
-  background-color: #ffffff;
+::-webkit-calendar-picker-indicator {
+  width: 20px;
+  height: 20px;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.light ::-webkit-calendar-picker-indicator{
+  background-color: #ffffff;
   background-image: url('../../../../img/light-date.svg');
 }
 
-.dark::before {
+.dark ::-webkit-calendar-picker-indicator {
   background-color: #201F24;
   background-image: url('../../../../img/dark-date.svg');
 }
@@ -24,7 +23,7 @@
 .todoPanelDateInput {
   display: flex;
   flex-direction: row-reverse;
-  align-items: baseline;
+  _align-items: baseline;
   gap: 1rem;
   border: none;
 }

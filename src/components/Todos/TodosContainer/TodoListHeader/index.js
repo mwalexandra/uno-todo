@@ -52,7 +52,7 @@ function TodoListHeader (){
         }}
       >{
         tab === 'Importants' ? 'Important' :  header
-        }</h1>
+        } </h1>
       <div className={style.headingBtnWrapper}>
         {
           tab === 'Importants' || searchString ? undefined 

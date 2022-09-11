@@ -1,6 +1,10 @@
-import { SHOW_PANEL_TODO,
-        SELECT_TODO_ID, SELECT_LIST_ID, SET_ACTIVE_TAB,
-        SEARCH_STRING } from './actions';
+import {
+  SHOW_PANEL_TODO, 
+  SELECT_TODO_ID, 
+	SELECT_LIST_ID, 
+	SET_ACTIVE_TAB, 
+	SEARCH_STRING,
+} from './actions';
 
 
 function showPanelTodo(panelShow) {

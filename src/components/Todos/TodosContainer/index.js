@@ -11,13 +11,13 @@ function TodosContainer() {
 
   return (
     <>
-      <main className={`${style.todosContainer} ${showPanelTodo ? style.showPanel : ''}`}>
-      <section className={style.todosSection}>
-        <TodoListHeader />
-        <TodoList />
-        <AddTodo />
-      </section>
-      </main>
+      <div className={`${style.todosContainer} ${showPanelTodo ? style.showPanel : ''}`}>
+        <section className={style.todosSection}>
+          <TodoListHeader />
+          <TodoList />
+          <AddTodo />
+        </section>
+      </div>
     </>
   )
 }

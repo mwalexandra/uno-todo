@@ -1,14 +1,15 @@
-import { initialContentState as listsContent } from '../content/contentReducer';
-import { SHOW_PANEL_TODO,
-          SELECT_TODO_ID, SELECT_LIST_ID, 
-          SET_ACTIVE_TAB, SEARCH_STRING } from './actions';
-
-const lists = listsContent.content
+import {
+  SHOW_PANEL_TODO, 
+  SELECT_TODO_ID, 
+	SELECT_LIST_ID, 
+	SET_ACTIVE_TAB, 
+	SEARCH_STRING,
+} from './actions';
 
 export const initialInterfaceState = {
   panelShow: false,
-  todoId: lists[0]?.todos[0]?.id | null,
-  listId: lists[0]?.id | null,
+  todoId: null,
+  listId: null,
   tab: 'Todos',
   searchString: '',
 };

@@ -4,6 +4,7 @@ import Placeholder from './components/Placeholder'
 import Modals from './components/Modals';
 import UserSettings from './components/UserSettings'
 import './common-styles/reset.css';
+import './UnoTodo.css';
 import { useSelector } from 'react-redux';
 
 function UnoTodo() {
@@ -12,14 +13,9 @@ function UnoTodo() {
   const modalShow = useSelector(state => state.modals.modalShow)
   const settingsShow = useSelector(state => state.userSettings.settingsShow)
 
-  const main = {
-    display: 'flex',
-    height: '100vh',
-  }
-
   return (
     <>
-      <div style={main}>
+      <div className="main">
         <SideBar />
         
         {

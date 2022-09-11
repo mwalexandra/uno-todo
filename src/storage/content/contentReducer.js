@@ -1,68 +1,18 @@
-import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_DELETE,
-        CHANGE_DATE, CHANGE_NOTE, CHANGE_TITLE,
-        ADD_LIST, CHANGE_HEADER, DELETE_LIST } from './actions';
-import { CreateDate } from '../../helpers';
+import {
+  TODO_ADD, 
+	TODO_COMPLETE, 
+	TODO_IMPORTANT, 
+	TODO_DELETE,
+	ADD_LIST, 
+	DELETE_LIST, 
+	CHANGE_HEADER, 
+	CHANGE_DATE, 
+	CHANGE_TITLE, 
+	CHANGE_NOTE,
+} from './actions';
 
 export const initialContentState = {
-  content: [
-    {
-      id: 44444,
-      header: 'Task list',
-      todos: [
-        {
-          id: '11111',
-          title: 'Todo 1',
-          note: 'Do something important',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-        },
-        {
-          id: '22222',
-          title: 'Todo 2',
-          note: 'Do something important',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-        },
-        {
-          id: '33333',
-          title: 'Todo 3',
-          note: 'Do something',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-        },
-      ]
-    },
-    {
-      id: 55555,
-      header: 'Task list 2',
-      todos: [
-        {
-          id: '1111122',
-          title: 'Todo 1',
-          note: 'Do something important',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-        },
-        {
-          id: '2222233',
-          title: 'Todo 2',
-          note: 'Do something important',
-          date: CreateDate(),
-          createDate: CreateDate(),
-          completed: true,
-          important: true,
-        },
-      ]  
-    }    
-  ]
+  content: []
 }
 
 function contentReducer(state = initialContentState, {type, payload}) {
@@ -78,6 +28,7 @@ function contentReducer(state = initialContentState, {type, payload}) {
                 id: Date.now(),
                 title: payload.title,
                 important: payload.important,
+                completed: false,
                 note: 'no notes',
                 date: Date.now(),
                 createDate: Date.now(),

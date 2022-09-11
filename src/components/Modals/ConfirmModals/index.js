@@ -29,7 +29,6 @@ function ConfirmModals(){
     if(modal.action === 'deleteTask'){
       dispatch(todoDelete(listId, todoId))
       dispatch(selectTodoId(null))
-      dispatch(showPanelTodo(false))
     } else if (modal.action === 'deleteList') {
       const deleteListIndex = lists.indexOf(lists.find(list => list.id === listId))
       dispatch(deleteList(listId));
@@ -43,7 +42,8 @@ function ConfirmModals(){
         dispatch(selectListId(null))
       }
     } 
-    dispatch(showModal(false));
+    dispatch(showPanelTodo(false))
+    dispatch(showModal(false))
   } 
 
     return (

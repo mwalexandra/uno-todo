@@ -1,6 +1,7 @@
 .headingWrapper{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .todosHeading{
   font-family: sans-serif;

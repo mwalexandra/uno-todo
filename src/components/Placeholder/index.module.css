@@ -1,12 +1,11 @@
 .placeholderWrapper{
-  align-self: stretch;
   display: flex;
-  margin-top: 5rem;
   width: 100%;
 }
 
 .placeholder {
   margin: auto;
+  height: 45vh;
 }
 
 .placeholderHeading{

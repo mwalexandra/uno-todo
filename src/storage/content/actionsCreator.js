@@ -1,6 +1,15 @@
-import { TODO_ADD, TODO_COMPLETE, TODO_IMPORTANT, TODO_DELETE,
-				CHANGE_DATE, CHANGE_TITLE, CHANGE_NOTE,
-				ADD_LIST, DELETE_LIST, CHANGE_HEADER } from './actions';
+import { 
+	TODO_ADD, 
+	TODO_COMPLETE, 
+	TODO_IMPORTANT, 
+	TODO_DELETE,
+	ADD_LIST, 
+	DELETE_LIST, 
+	CHANGE_HEADER, 
+	CHANGE_DATE, 
+	CHANGE_TITLE, 
+	CHANGE_NOTE,
+} from './actions';
 
 
 function todoAdd(listId, title, important) {

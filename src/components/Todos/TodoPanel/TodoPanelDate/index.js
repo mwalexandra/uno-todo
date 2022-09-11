@@ -26,7 +26,7 @@ function TodoPanelDate(){
 
   return (
     <div 
-      className={`${style.todoPanelDate} ${mode !== 'lightTheme' ? style.dark : ''}`}
+      className={`${style.todoPanelDate} ${mode === 'Light' ? style.light : style.dark}`}
       style={{
           borderBottom: `1px solid ${theme.onSurfacePressedBrush}`
         }}

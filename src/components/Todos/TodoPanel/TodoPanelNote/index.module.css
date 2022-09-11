@@ -1,10 +1,11 @@
 .todoPanelNote {
   padding: 15px 0;
+  height: 45%;
 }
 
 .todoPanelTextarea {
   padding: 1rem;
   width: 100%;
-  min-height: 25rem;
+  height: 100%;
   border: none;
 }
