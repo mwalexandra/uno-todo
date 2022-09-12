@@ -6,23 +6,15 @@ import TabSwitcher from '../TabSwitcher'
 
 function TodoList() {
 
-  const selectedListId = useSelector(state => state.interface.listId)
-
-  const todos = useSelector(state => 
-      state.lists.content.find(list => list.id === selectedListId)?.todos
-  )
-
-  const tab = useSelector(state => state.interface.tab);
-
-  const completedTodos = useSelector(state => 
-      state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.completed)
-  )
-
-  const importantsTodos = useSelector(state => 
-      state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.important)
-  )
-
-  const searchString = useSelector(state => state.interface.searchString)
+  const selectedListId = useSelector(state => state.interface.listId),
+        todos = useSelector(state => 
+            state.lists.content.find(list => list.id === selectedListId)?.todos),
+        tab = useSelector(state => state.interface.tab),
+        completedTodos = useSelector(state => 
+            state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.completed)),
+        importantsTodos = useSelector(state => 
+            state.lists.content.find(list =>  list.id === selectedListId)?.todos.filter(todo => todo.important)),
+        searchString = useSelector(state => state.interface.searchString);
   
   let renderTodos = [];
 

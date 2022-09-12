@@ -11,17 +11,17 @@ function TodoBox({todoId}) {
 
 const dispatch = useDispatch();
 
-const isShownPanelTodo = useSelector(state => state.interface.panelShow);
-const selectedTodoId = useSelector(state => state.interface.todoId);
-
-const mode = useSelector(state => state.userSettings.settings.mode)
-const theme = useSelector(state => state.userSettings.settings[mode])
+const isShownPanelTodo = useSelector(state => state.interface.panelShow),
+      selectedTodoId = useSelector(state => state.interface.todoId),
+      mode = useSelector(state => state.userSettings.settings.mode),
+      theme = useSelector(state => state.userSettings.settings[mode]);
 
   function editTodo() {
     dispatch(selectTodoId(todoId))
 
     if (todoId === selectedTodoId) {
       dispatch(showPanelTodo(!isShownPanelTodo));
+      dispatch(selectTodoId(null));
     } else {
       dispatch(showPanelTodo(true));
     }

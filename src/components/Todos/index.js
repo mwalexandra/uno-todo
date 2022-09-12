@@ -5,10 +5,9 @@ import { useSelector } from 'react-redux';
 
 function Todos() {
 
-  const tab = useSelector(state => state.interface.tab)
-  const mode = useSelector(state => state.userSettings.settings.mode)
-  const theme = useSelector(state => state.userSettings.settings[mode])
-  const selectedTodo = useSelector(state => state.interface.todoId)
+  const tab = useSelector(state => state.interface.tab),
+        mode = useSelector(state => state.userSettings.settings.mode),
+        theme = useSelector(state => state.userSettings.settings[mode]);
   
   return (
     <>
@@ -21,9 +20,7 @@ function Todos() {
         }
       >
         <TodosContainer /> 
-        {
-          selectedTodo ? <TodoPanel /> : undefined
-        }
+        <TodoPanel />
       </main>
     </>
   )

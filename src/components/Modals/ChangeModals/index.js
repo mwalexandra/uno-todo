@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react'
 import style from '../index.module.css'
 import { showModal } from '../../../storage/modals/actionsCreator'
-import { changeHeader, todoAdd, addList } from '../../../storage/content/actionsCreator'
-import { selectTodoId, selectListId } from '../../../storage/interface/actionsCreator'
-//TODO
-import { useState } from 'react'
+import ChangeBtn from './ChangeBtn'
+
 
 function ChangeModals () {
 
@@ -12,23 +11,10 @@ function ChangeModals () {
         modal = useSelector(state => state.modals.modal),
         mode = useSelector(state => state.userSettings.settings.mode),
         theme = useSelector(state => state.userSettings.settings[mode]),
-        tab = useSelector(state => state.interface.tab),
-        listId = useSelector(state => state.interface.listId),
         inputValue = useSelector(state => state.modals.modal.inputValue),
         [ currentValue, setCurrentValue ] = useState(inputValue) 
   
-  function modalAction(value){
-    if(modal.action === 'changeHeader'){
-      dispatch(changeHeader(listId, value)); 
-    } else if (modal.action === 'todoAdd') {
-      const important = tab === 'Importants' ? true : false
-      dispatch(todoAdd(listId, value, important))
-    } else if (modal.action === 'addList') {
-      dispatch(addList(value)); 
-    }
-    setCurrentValue('');
-    dispatch(showModal(false));
-  } 
+
   return (
     <>
       <input
@@ -51,15 +37,10 @@ function ChangeModals () {
           }}
           onClick={() => dispatch(showModal(false))}
         >Cancel</button>
-        <button 
-          className={style.addBtn}
-          disabled={!currentValue}
-          style={{
-            backgroundColor: theme.primaryColor,
-            color: theme.onPrimaryColor,
-          }}
-          onClick={() => modalAction(currentValue)}  
-        >{modal.btnText}</button>
+        <ChangeBtn 
+          currentValue={currentValue}
+          setCurrentValue={setCurrentValue}
+        />
       </div>
     </>
   )
