@@ -3,7 +3,7 @@ import style from './index.module.css';
 
 
 
-function Btn(props){
+function SettingsBtn(props){
 
   const mode = useSelector(state => state.userSettings.settings.mode)
   const theme = useSelector(state => state.userSettings.settings[mode])
@@ -88,4 +88,4 @@ function Btn(props){
 
 }
 
-export default Btn;
+export default SettingsBtn;
