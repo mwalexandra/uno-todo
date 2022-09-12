@@ -33,7 +33,7 @@ function StartPage(){
           >Start using the best to-do app, you can create and manage your To Do lists to improve your organisation.</p>
         </div>
         <Link 
-          to={`${host}app`}
+          to={'/app'}
           className={style.startedBtn}
           style={{
             color: theme.onPrimaryColor,
