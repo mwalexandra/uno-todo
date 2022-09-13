@@ -33,7 +33,7 @@ function TodoList() {
  if(!renderTodos || renderTodos.length === 0){  
   return <Placeholder name={'Tasks'}/>
  } else {
-  if (tab === 'Importants' || searchString){
+  //if (tab === 'Importants' || searchString){
     return (
       <ul className={style.todoList}>
         { renderTodos.map(todo => {
@@ -45,22 +45,22 @@ function TodoList() {
         }
       </ul> 
     )
-  } else {
-    return (
-      <>
-        <TabSwitcher />
-        <ul className={style.todoList}>
-          { renderTodos.map(todo => {
-            return <TodoBox
-                      key={todo.id}
-                      todoId = {todo.id}
-                    />
-            })
-          }
-        </ul> 
-      </>
-    )
-  }
+  // } else {
+  //   return (
+  //     <>
+  //       <TabSwitcher />
+  //       <ul className={style.todoList}>
+  //         { renderTodos.map(todo => {
+  //           return <TodoBox
+  //                     key={todo.id}
+  //                     todoId = {todo.id}
+  //                   />
+  //           })
+  //         }
+  //       </ul> 
+  //     </>
+  //   )
+  //}
  }
 }
 

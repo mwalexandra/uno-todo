@@ -1,11 +1,14 @@
 .placeholderWrapper{
-  display: flex;
   width: 100%;
 }
 
 .placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: auto;
   height: 45vh;
+  text-align: center;
 }
 
 .placeholderHeading{
