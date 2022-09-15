@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import style from './index.module.css'
 
+window.env = { ENV_HOST: '/build-unotodo/', }
 const host = window.env.ENV_HOST;
 
 function StartPage(){
