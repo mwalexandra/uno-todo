@@ -7,8 +7,7 @@ function Todos() {
 
   const tab = useSelector(state => state.interface.tab),
         mode = useSelector(state => state.userSettings.settings.mode),
-        theme = useSelector(state => state.userSettings.settings[mode]),
-        todoId = useSelector(state => state.interface.todoId);
+        theme = useSelector(state => state.userSettings.settings[mode]);
   
   return (
     <>
@@ -21,9 +20,7 @@ function Todos() {
         }
       >
         <TodosContainer /> 
-        {
-          todoId ? <TodoPanel /> : undefined
-        }
+        <TodoPanel />
       </main>
     </>
   )

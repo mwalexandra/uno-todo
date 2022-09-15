@@ -11,7 +11,8 @@ function TodoPanel(){
 
   const isShownPanelTodo = useSelector(state => state.interface.panelShow)
   const mode = useSelector(state => state.userSettings.settings.mode)
-  const theme = useSelector(state => state.userSettings.settings[mode])
+  const theme = useSelector(state => state.userSettings.settings[mode]),
+        todoId = useSelector(state => state.interface.todoId)
 
   return (
     <section 
@@ -20,10 +21,16 @@ function TodoPanel(){
         backgroundColor: theme.surfaceColor
       }}  
     >
-      <TodoPanelHeader />
-      <TodoPanelDate />
-      <TodoPanelNote />
-      <TodoPanelDelete />
+    {
+      todoId ? 
+      <>
+        <TodoPanelHeader />
+        <TodoPanelDate />
+        <TodoPanelNote />
+        <TodoPanelDelete />
+      </> 
+      : undefined
+    }
     </section>  
   )
 }
