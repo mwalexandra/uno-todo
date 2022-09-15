@@ -10,8 +10,10 @@ import {
 	CHANGE_TITLE, 
 	CHANGE_NOTE,
 } from './actions';
+import { CreateDate } from '../../helpers/index';
+import { v4 as uuidv4 } from 'uuid';
 
-export const initialContentState = {
+const initialContentState = {
   content: []
 }
 
@@ -25,13 +27,13 @@ function contentReducer(state = initialContentState, {type, payload}) {
           content: state.content.map(list => {
             if(list.id === payload.listId) {
               list.todos.push({
-                id: Date.now(),
+                id: uuidv4(),
                 title: payload.title,
                 important: payload.important,
                 completed: false,
                 note: 'no notes',
-                date: Date.now(),
-                createDate: Date.now(),
+                date: CreateDate(),
+                createDate: CreateDate(),
               })
             }
             return list;
@@ -57,7 +59,7 @@ function contentReducer(state = initialContentState, {type, payload}) {
     case TODO_IMPORTANT:
       return {
         ...state,
-        сontent: state.content.map(list => {
+        content: state.content.map(list => {
             if(list.id === payload.listId) {
               list.todos.map(todo => {
                 if(todo.id === payload.todoId){
@@ -116,7 +118,7 @@ function contentReducer(state = initialContentState, {type, payload}) {
       case CHANGE_TITLE:
         return {
           ...state,
-          сontent: state.content.map(list => {
+          content: state.content.map(list => {
               if(list.id === payload.listId) {
                 list.todos.map(todo => {
                   if(todo.id === payload.todoId){

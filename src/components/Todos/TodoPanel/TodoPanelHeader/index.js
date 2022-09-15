@@ -21,8 +21,6 @@ function TodoPanelHeader(){
         mode = useSelector(state => state.userSettings.settings.mode),
         theme = useSelector(state => state.userSettings.settings[mode]);
   
-  console.log(title, completed);
-
   return (
     <div 
       className={style.todoPanelHeader}

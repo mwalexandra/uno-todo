@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux'
 
 function TodoPanel(){
 
-  const isShownPanelTodo = useSelector(state => state.interface.panelShow)
-  const mode = useSelector(state => state.userSettings.settings.mode)
-  const theme = useSelector(state => state.userSettings.settings[mode]),
-        todoId = useSelector(state => state.interface.todoId)
+  const isShownPanelTodo = useSelector(state => state.interface.panelShow),
+        mode = useSelector(state => state.userSettings.settings.mode),
+        theme = useSelector(state => state.userSettings.settings[mode]),
+        todoId = useSelector(state => state.interface.todoId);
 
   return (
     <section 

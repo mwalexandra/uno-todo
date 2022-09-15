@@ -6,7 +6,7 @@ import {
 	SEARCH_STRING,
 } from './actions';
 
-export const initialInterfaceState = {
+const initialInterfaceState = {
   panelShow: false,
   todoId: null,
   listId: null,
