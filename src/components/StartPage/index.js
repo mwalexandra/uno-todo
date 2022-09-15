@@ -2,13 +2,15 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import style from './index.module.css'
-import { host } from '../../AppRouter.js'
+
+const host = window.env.ENV_HOST;
 
 function StartPage(){
 
   const mode = useSelector(state => state.userSettings.settings.mode)
   const theme = useSelector(state => state.userSettings.settings[mode])
   const logo = require(`../../img/${theme.logo}.png`);
+
   
   return(
     <section 
@@ -33,7 +35,7 @@ function StartPage(){
           >Start using the best to-do app, you can create and manage your To Do lists to improve your organisation.</p>
         </div>
         <Link 
-          to={'/app'}
+          to={`${host}app`}
           className={style.startedBtn}
           style={{
             color: theme.onPrimaryColor,
